@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect requests to the public directory
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+
+    # Block access to sensitive files
+    <FilesMatch "\.(env|json|log|lock|sql|git|ht|phpunit|yaml|bak|config)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+
+    # Disable directory listing
+    Options -Indexes
+
+    # Block suspicious user agents
+    SetEnvIfNoCase User-Agent "libwww-perl" bad_bot
+    SetEnvIfNoCase User-Agent "python-requests" bad_bot
+    Deny from env=bad_bot
+
+    # Prevent access to potentially malicious scripts
+    <FilesMatch "^\.(htaccess|htpasswd|ini|phar|sql|bak|config|dist|json|lock)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>

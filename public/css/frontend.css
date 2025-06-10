@@ -1,0 +1,1528 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #141213;
+    --secondary-color: #FDB016;
+    --text-color: #231F20;
+    --text-color-light: #ffffff;
+    --text-gray: #adb5bd;
+    --card-bg-color: #1D2224;
+}
+
+body {
+    background-color: var(--primary-color) !important;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+section {
+    padding-block: 80px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    margin-block-end: 0 !important;
+}
+
+li {
+    list-style: none !important;
+}
+
+.primary-btn {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 500 !important;
+    padding: 10px 30px !important;
+    text-transform: uppercase !important;
+    border-radius: 40px !important;
+    border: 1px solid var(--secondary-color) !important;
+    color: var(--text-color) !important;
+    background-color: var(--secondary-color) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.primary-btn:hover {
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+.section-title {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-block-end: 18px !important;
+    color: var(--text-color-light);
+}
+
+.section-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--text-gray);
+}
+
+input,
+textarea {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 12px 10px !important;
+    border: none !important;
+    border-radius: 12px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+
+.toastify {
+    font-size: 14px !important;
+    padding: 12px 20px;
+    color: #000;
+    display: inline-block;
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, .12), 0 10px 36px -4px rgba(77, 96, 232, .3);
+    background: var(--secondary-color) !important;
+    position: fixed;
+    opacity: 0;
+    transition: all .4s cubic-bezier(.215, .61, .355, 1);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    max-width: calc(50% - 20px);
+    z-index: 2147483647
+}
+
+
+/* HEADER CSS HERE */
+
+header {
+    background-color: #ffffff;
+}
+
+header .top-navbar {
+    padding-block: 6px !important;
+    color: var(--text-color-light);
+    background-color: #1D2224;
+}
+
+header .top-navbar svg path {
+    fill: var(--text-gray);
+}
+
+header .top-navbar p {
+    margin-bottom: 0 !important;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--text-gray);
+}
+
+header .logo {
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+}
+
+header ul>li>a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--text-color) !important;
+}
+
+header ul>li>a:hover,
+header ul>li>a.active {
+    color: var(--secondary-color) !important;
+}
+
+header .contact-btn,
+header .contact-btn:hover {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    border-radius: 0 !important;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+header .menu-btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--text-color-light);
+}
+
+header .menu-btn svg path {
+    fill: var(--text-color) !important;
+}
+
+
+/* HERO SECTION CSS HERE */
+
+.hero-section {
+    padding-block: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../img/frontend/banner/home-hero-img.jpg');
+    position: relative;
+}
+
+.hero-section .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-section .hero-title {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-block-end: 12px !important;
+    color: var(--text-color-light);
+}
+
+.hero-section .hero-text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-block-end: 40px !important;
+    color: var(--text-color-light);
+}
+
+
+/* ABOUT SECTION CSS HERE */
+
+.about-section {
+    background-color: var(--primary-color);
+}
+
+.about-section .right-wrapper .image {
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-section .right-wrapper .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* SERVICES SECTION CSS HERE */
+
+.services-section {
+    background-color: var(--primary-color);
+}
+
+.services-section .card {
+    min-height: 100%;
+    padding: 30px 30px !important;
+    border-radius: 0 !important;
+    border: none;
+    background-color: var(--card-bg-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card:nth-child(1),
+.services-section .card:nth-child(4) {
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+.services-section .card:nth-child(3),
+.services-section .card:nth-child(6) {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+.services-section .card .icon {
+    text-align: center;
+    margin-inline: auto;
+    margin-block-end: 12px;
+}
+
+.services-section .card .icon svg,
+.services-section .card .icon svg path,
+.services-section .card .icon svg rect {
+    width: 85px;
+    height: 85px;
+    color: var(--secondary-color);
+    fill: var(--secondary-color);
+}
+
+.services-section .card .card-title {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-block-end: 12px !important;
+    color: var(--text-color-light);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card .card-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0 !important;
+    color: var(--text-gray);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card:hover .card-title {
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card:hover .card-text {
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section .card:hover .icon svg,
+.services-section .card:hover .icon svg path,
+.services-section .card:hover .icon svg rect {
+    color: var(--text-color);
+    fill: var(--text-color);
+}
+
+
+/* COUNTER SECTION CSS HERE */
+
+.counter-section {
+    background-color: var(--primary-color);
+}
+
+.counter-section .card {
+    padding: 40px;
+    border-radius: 16px;
+    background-color: var(--card-bg-color);
+}
+
+.counter-section h3 {
+    font-size: 54px;
+    line-height: 60px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.counter-section span {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+
+/* REVIEWS SECTION CSS HERE */
+
+.reviews-section {
+    background-color: var(--primary-color);
+}
+
+.reviews-section .next-btn,
+.reviews-section .prev-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.reviews-section .next-btn svg,
+.reviews-section .prev-btn svg {
+    width: 30px;
+    height: 30px;
+    color: var(--text-color-light);
+    fill: var(--text-color-light);
+}
+
+.reviews-section .next-btn {
+    right: -40px;
+}
+
+.reviews-section .prev-btn {
+    left: -40px;
+}
+
+.reviews-section .owl-carousel .item {
+    border-radius: 12px;
+    border: 1px solid #646464;
+    background-color: #1D2224;
+}
+
+.reviews-section .owl-carousel .item .review-card {
+    padding: 40px;
+}
+
+.reviews-section .owl-carousel .item .review-card .review-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-color-light);
+    position: relative;
+}
+
+.reviews-section .owl-carousel .item .review-card .quote {
+    font-size: 68px;
+    line-height: 68px;
+    font-weight: 600;
+    transform: rotate(5deg);
+    color: var(--secondary-color);
+}
+
+.reviews-section .owl-carousel .item .review-card .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-block-start: 8px;
+}
+
+.reviews-section .owl-carousel .item .review-card .user-info .image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.reviews-section .owl-carousel .item .review-card .user-info .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.reviews-section .owl-carousel .item .review-card .user-info .name {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-block-start: 10px !important;
+    margin-block-end: 0 !important;
+    color: var(--text-color-light);
+}
+
+.reviews-section .owl-carousel .item .review-card .user-info .role {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-color-light);
+}
+
+.owl-nav {
+    display: none !important;
+}
+
+
+/* CLIENTS SECTION CSS HERE */
+
+.clients-section {
+    padding-block-end: 120px !important;
+    background-color: var(--primary-color);
+}
+
+.clients-section .next-btn,
+.clients-section .prev-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.clients-section .next-btn svg,
+.clients-section .prev-btn svg {
+    width: 30px;
+    height: 30px;
+    color: var(--text-color-light);
+    fill: var(--text-color-light);
+}
+
+.clients-section .next-btn {
+    right: -40px;
+}
+
+.clients-section .prev-btn {
+    left: -40px;
+}
+
+.clients-section .owl-carousel .item {
+    min-height: 80px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 10px 4px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.clients-section .owl-carousel .item img {
+    max-height: 60px;
+    min-height: 60px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+
+/* CONTACT SECTION CSS HERE */
+
+.contact-section {
+    padding-block: 60px !important;
+    background-color: var(--secondary-color);
+}
+
+.contact-section .section-title,
+.contact-section .section-text {
+    color: #141213;
+}
+
+.contact-section .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block-end: 20px;
+}
+
+.contact-section .info .icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+    fill: var(--primary-color);
+}
+
+.contact-section .info .icon-2 svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+    fill: var(--primary-color);
+}
+
+.contact-section .info a,
+.contact-section .info span {
+    color: var(--primary-color) !important;
+}
+
+.contact-section .contact-info a {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+
+/* HERO SECTION 2 */
+
+.hero-section-2 {
+    padding-block: 60px !important;
+    background-color: #1D2224;
+}
+
+.hero-section-2 .hero-title {
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+.hero-section-2 .hero-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--text-color-light);
+}
+
+.hero-section-2 .address {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+    color: var(--text-color-light);
+}
+
+.hero-section-2 .email {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.hero-section-2 .tab-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-section-2 .tab-list>a>li {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-color-light);
+    background-color: #45515B;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-section-2 .tab-list>a>li.active,
+.hero-section-2 .tab-list>a>li:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* VISION MISSION CSS HERE */
+
+.vision-mission-section .card {
+    border-radius: 20px;
+    border: none;
+    background-color: #1D2224;
+}
+
+.vision-mission-section .card .card-body {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.vision-mission-section .card .card-body .icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 25px;
+    background-color: var(--secondary-color);
+}
+
+.vision-mission-section .card .card-body .icon svg {
+    width: 30px;
+    height: 30px;
+    color: #000;
+    fill: #000;
+}
+
+.vision-mission-section .card .card-body .card-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--text-color-light) !important;
+}
+
+.vision-mission-section .card .card-body .card-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--text-color-light);
+}
+
+
+/* VALUES SECTION */
+
+.values-section .card {
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: #1D2224;
+    transition: all 0.5s ease-in-out;
+}
+
+.values-section .card:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}
+
+.values-section .card .card-body {
+    padding: 30px;
+}
+
+.values-section .card .card-body .icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    margin-inline: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 20px;
+    margin-block-end: 20px;
+    background-color: #262D2F;
+}
+
+.values-section .card .card-body .icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--secondary-color);
+    fill: var(--secondary-color);
+}
+
+.values-section .card .card-body .card-title {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color-light) !important;
+}
+
+.values-section .card .card-body .card-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-gray);
+}
+
+
+/* TEAM SECTION CSS HERE */
+
+.team-section .left-wrapper,
+.team-section .right-wrapper {
+    min-height: 100%;
+}
+
+.team-section .left-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #1D2224;
+}
+
+.team-section .left-wrapper .image {
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.team-section .left-wrapper .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-section .right-wrapper {
+    padding-inline-start: 70px;
+}
+
+.team-section .right-wrapper .name {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-block-end: 0 !important;
+    color: var(--text-color-light);
+}
+
+.team-section .right-wrapper .position {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--text-gray);
+}
+
+.team-section .right-wrapper .description {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-block-start: 20px !important;
+    color: var(--text-color-light);
+}
+
+.team-section .prev-btn,
+.team-section .next-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.team-section .prev-btn:hover,
+.team-section .next-btn:hover {
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+}
+
+.team-section .prev-btn:hover svg,
+.team-section .next-btn:hover svg {
+    color: var(--secondary-color);
+    fill: var(--secondary-color);
+}
+
+
+/* GALLERY SECTION CSS HERE */
+
+.gallery-section .card {
+    padding: 0 !important;
+    margin-block-end: 20px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    cursor: zoom-in;
+    transition: all 0.5s ease-in-out;
+}
+
+.gallery-section .card .card-body {
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+    overflow: hidden;
+    padding: 0 !important;
+    position: relative;
+}
+
+.gallery-section .card .card-body .icon {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: 0;
+    z-index: 99;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-section .card .card-body .icon svg {
+    width: 46px;
+    height: 46px;
+}
+
+.gallery-section .card .card-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: all 0.5s ease-in-out;
+}
+
+.gallery-section .card :hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.gallery-section .card :hover .icon {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+/* BLOG SECTION CSS HERE */
+
+.blog-section .card {
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    margin-block-end: 30px !important;
+    background-color: transparent;
+}
+
+.blog-section .card .card-body {
+    padding: 0 !important;
+    background-color: transparent;
+}
+
+.blog-section .card .card-body .image {
+    width: auto;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-section .card .card-body .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: all 0.5s ease-in-out;
+}
+
+.blog-section .card .card-body .category {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 6px;
+    top: 6px;
+    left: 6px;
+    position: absolute;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    z-index: 99;
+}
+
+.blog-section .card .card-body .content {
+    padding: 10px;
+    background-color: transparent;
+}
+
+.blog-section .card .card-body .content .title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color: var(--text-color-light);
+    margin-block-end: 8px !important;
+}
+
+.blog-section .card .card-body .content .author,
+.blog-section .card .card-body .content .date {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #9F9E9E;
+    margin-block-end: 10px !important;
+}
+
+.blog-section .card .card-body .content .text {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: var(--text-gray);
+    margin-block-end: 0 !important;
+}
+
+.blog-section .card .card-body .content .read-more-btn {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 !important;
+    border: none !important;
+    margin-block-start: 12px !important;
+    color: var(--secondary-color);
+}
+
+.blog-section .card .card-body .content .read-more-btn:hover {
+    text-decoration: underline !important;
+}
+
+.blog-section .card .image:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* BLOG DETAIL CSS HERE */
+
+.hero-section-2.blog-detail {
+    min-height: 200px;
+}
+
+.blog-detail-section {
+    transform: translateY(-210px);
+}
+
+.blog-detail-section .thumbnail {
+    width: auto;
+    height: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-detail-section .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.blog-detail-section .category {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 6px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+.blog-detail-section .title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--text-color-light);
+    margin-block-start: 10px;
+    margin-block-end: 20px !important;
+}
+
+.blog-detail-section .author {
+    margin-block-start: 40px;
+    margin-block-end: 5px;
+}
+
+.blog-detail-section .author svg,
+.blog-detail-section .date svg {
+    width: 16px;
+    height: 16px;
+    color: var(--secondary-color);
+}
+
+.blog-detail-section .author span,
+.blog-detail-section .date span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #9F9E9E;
+    margin-block-end: 0 !important;
+}
+
+.blog-detail-section .content {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: var(--text-color-light) !important;
+}
+
+#contactForm input::-webkit-outer-spin-button,
+#contactForm input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#contactForm input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/* RECENT BLOG CSS HERE */
+
+.recent-blog-section {
+    padding-block: 0 !important;
+    transform: translateY(-210px);
+}
+
+
+/* footer */
+
+footer {
+    padding-block-start: 120px;
+    padding-block-end: 40px;
+    background-color: #1D2224 !important;
+}
+
+footer .logo-wrapper {
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer .logo-wrapper .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+}
+
+
+/* footer .description {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    padding-top: 16px !important;
+    color: var(--text-color-light);
+} */
+
+footer .menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+footer .menu-list li a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--text-color-light);
+}
+
+footer .menu-list li a.active {
+    color: var(--secondary-color);
+}
+
+footer .subscribe h6 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+footer .subscribe .input-group {
+    margin-top: 20px;
+}
+
+footer .subscribe .input-group .form-control::placeholder {
+    color: #767676 !important;
+    opacity: 1;
+}
+
+footer .subscribe .input-group .form-control::-ms-input-placeholder {
+    color: #767676 !important;
+}
+
+footer .subscribe .input-group .form-control {
+    height: 40px;
+    border-radius: 4px 0 0 4px !important;
+    border: 1px solid #676767 !important;
+    color: #767676 !important;
+    background-color: #1D2224 !important;
+}
+
+footer .subscribe .input-group button {
+    height: 40px;
+    padding-inline: 20px !important;
+    display: flex;
+    border-radius: 0 4px 4px 0 !important;
+    align-items: center;
+    text-transform: capitalize !important;
+}
+
+footer .copyright {
+    padding-block-end: 20px;
+    align-items: center;
+}
+
+footer .divider {
+    color: var(--text-color-light);
+}
+
+footer .copyright p {
+    margin-bottom: 0 !important;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: var(--text-gray) !important;
+}
+
+footer .copyright svg {
+    cursor: pointer;
+}
+
+footer .copyright svg path {
+    fill: var(--text-gray) !important;
+}
+
+
+/* RESPONSIVE HERE */
+
+@media only screen and (max-width: 992px) {
+    .services-section .card:nth-child(1) {
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(2) {
+        border-top-right-radius: 20px !important;
+    }
+
+    .services-section .card:nth-child(4),
+    .services-section .card:nth-child(3) {
+        border-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(5) {
+        border-bottom-left-radius: 20px !important;
+    }
+
+    .services-section .card:nth-child(6) {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 20px !important;
+        border-top-right-radius: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header .top-navbar p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    header .logo {
+        height: 35px;
+    }
+
+    section {
+        padding-block: 40px;
+    }
+
+    .section-subtitle {
+        font-size: 13px !important;
+        line-height: 20px !important;
+    }
+
+    .section-title {
+        font-size: 20px !important;
+        line-height: 24px !important;
+    }
+
+    .section-text {
+        font-size: 13px !important;
+        line-height: 20px !important;
+    }
+
+    .primary-btn {
+        font-size: 13px !important;
+        padding: 12px 26px !important;
+    }
+
+    .hero-section .hero-title {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .hero-section .hero-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .hero-section-2 {
+        padding-block: 26px !important;
+    }
+
+    .hero-section-2 .hero-title {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .hero-section-2 .hero-text {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .hero-section-2 .address {
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+        margin-top: 20px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .hero-section-2 .email {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .about-section .right-wrapper .image {
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .about-section .right-wrapper .image img {
+        object-position: top center;
+    }
+
+    .counter-section .card {
+        padding: 20px;
+    }
+
+    .counter-section h3 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .counter-section span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .vision-mission-section .card .card-body {
+        padding: 20px;
+    }
+
+    .vision-mission-section .card .card-body .icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+        padding: 15px;
+    }
+
+    .vision-mission-section .card .card-body .icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .vision-mission-section .card .card-body .card-title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .vision-mission-section .card .card-body .card-text {
+        font-size: 13px;
+    }
+
+    .values-section .card .card-body {
+        padding: 20px;
+    }
+
+    .values-section .card .card-body .card-title {
+        font-size: 16px;
+    }
+
+    .values-section .card .card-body .card-text {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .team-section .left-wrapper,
+    .team-section .right-wrapper {
+        min-height: 200px;
+    }
+
+    .team-section .left-wrapper .image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .team-section .right-wrapper {
+        padding-inline-start: 20px !important;
+    }
+
+    .team-section .right-wrapper .name {
+        font-size: 16px;
+    }
+
+    .team-section .right-wrapper .position {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .team-section .right-wrapper .description {
+        font-size: 13px;
+        margin-block-start: 10px !important;
+    }
+
+    .contact-section {
+        padding-block: 30px !important;
+    }
+
+    .contact-section .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-block-end: 20px;
+    }
+
+    .contact-section .info .icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-section .info a,
+    .contact-section .info span {
+        font-size: 14px !important;
+    }
+
+    .contact-section .contact-info a {
+        font-size: 18px !important;
+        line-height: 22px;
+        font-weight: 700;
+    }
+
+    .services-section .card {
+        padding: 15px 6px;
+    }
+
+    .services-section .card:nth-child(1) {
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
+        border-bottom-left-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(2) {
+        border-top-right-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(4),
+    .services-section .card:nth-child(3) {
+        border-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(5) {
+        border-bottom-left-radius: 0 !important;
+    }
+
+    .services-section .card:nth-child(6) {
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-top-right-radius: 0 !important;
+    }
+
+    .services-section .card .card-title {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 700;
+    }
+
+    .services-section .card .card-text {
+        font-size: 13px;
+    }
+
+    .services-section .card .icon svg,
+    .services-section .card .icon svg path,
+    .services-section .card .icon svg rect {
+        width: 84px;
+        height: 84px;
+    }
+
+    .hero-section-2 .tab-list>li {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 8px 20px;
+    }
+
+    .hero-section-2.blog-detail {
+        display: none;
+    }
+
+    .blog-detail-section {
+        transform: translateY(0);
+    }
+
+    .blog-detail-section .thumbnail {
+        height: 160px;
+    }
+
+    .blog-detail-section .category {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .blog-detail-section .title {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+
+    .blog-detail-section .author {
+        margin-block-start: 40px;
+        margin-block-end: 5px;
+    }
+
+    .blog-detail-section .author svg,
+    .blog-detail-section .date svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .blog-detail-section .author span,
+    .blog-detail-section .date span {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .blog-detail-section .content {
+        font-size: 14px;
+    }
+
+    .recent-blog-section {
+        padding-block: 40px !important;
+        transform: translateY(0);
+    }
+
+    .reviews-section .owl-carousel .item .review-card {
+        padding: 20px 12px;
+    }
+
+    .reviews-section .prev-btn {
+        left: -20px;
+    }
+
+    .reviews-section .next-btn {
+        right: -20px;
+    }
+
+    .reviews-section .owl-carousel .item .review-card .quote {
+        font-size: 30px;
+    }
+
+    .clients-section .prev-btn {
+        left: -20px;
+    }
+
+    .clients-section .next-btn {
+        right: -20px;
+    }
+
+    .reviews-section .owl-carousel .item .review-card .review-text {
+        font-size: 13px;
+    }
+
+    footer {
+        padding-block-start: 40px;
+    }
+
+    footer .description {
+        font-size: 13px;
+    }
+
+    footer .copyright {
+        padding-block-end: 20px;
+    }
+}

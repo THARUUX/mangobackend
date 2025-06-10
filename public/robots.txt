@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+
+Allow: /uploads/
+Allow: /img/
+
+Sitemap: https://x-guard.lk/sitemap.xml

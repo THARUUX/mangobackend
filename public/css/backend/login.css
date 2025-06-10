@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #141213;
+    --secondary-color: #FDB016;
+    --text-color: #231F20;
+    --gray: #707070;
+}
+
+body {
+    font-family: "Urbanist", sans-serif !important;
+}
+
+.notyf__message {
+    font-size: 14px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0 !important;
+}
+
+input {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 8px 10px !important;
+    border: 1px solid #c5c5c5 !important;
+    border-radius: 6px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+
+.form-control:focus {
+    border: 1px solid #336AEA !important;
+}
+
+.form-label {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #000;
+}
+
+.form-group {
+    margin-block-end: 16px;
+}
+
+.btn {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 8px 24px !important;
+}
+
+.login-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.login-section .card {
+    border: none !important;
+    border-radius: 16px;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.login-section .card .card-body {
+    padding: 0 !important;
+}
+
+.login-section .card .card-body .card-title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.login-section .card .card-body .card-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--gray);
+    text-align: center;
+}
+
+.card .img-wrapper {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .login-section .card {
+        border: none !important;
+        border-radius: 16px;
+        padding: 0 !important;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: none;
+        overflow: hidden;
+    }
+    .login-section .card .card-body .card-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .login-section .card .card-body .card-text {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
