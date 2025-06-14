@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
-                <div class="w-full flex items-end h-[871px]" style="background-image: url({{ asset('new_frontend/Assets/img(6).png') }}); background-size: cover; background-position: center;">
+                <div class="w-full flex items-end h-[871px]" style="background-image: url('{{ asset('new_frontend/Assets/img(6).png') }}'); background-size: cover; background-position: center;">
                     <div class="bg-[#FF9933] py-9 px-12 text-xl sm:text-2xl tracking-wider">MORE DETAILS</div>
                 </div>
             </div>
