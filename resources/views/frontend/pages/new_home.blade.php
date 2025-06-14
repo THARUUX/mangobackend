@@ -217,11 +217,11 @@
                 <div class="swiper-button-next"></div>
             </div>
 
-            <div class="justify-center flex py-15 mt-10">
+            {{-- <div class="justify-center flex py-15 mt-10">
                 <a href="{{ url('/service') }}">
                     <button class="py-3 px-6 rounded-full text-white font-[600] bg-[#02515A]">EXPLORE MORE TOURS</button>
                 </a>
-            </div>
+            </div> --}}
         </section>
 
         <!-- Round Tours Section -->
