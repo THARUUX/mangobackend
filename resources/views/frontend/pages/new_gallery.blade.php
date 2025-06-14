@@ -20,7 +20,7 @@
                         <div class="text-2xl sm:text-5xl">{{ $gallery->title }}</div>
                         <div class="px-10 sm:text-md text-xs text-wrap">{{ $gallery->description }}</div>
                     </div>
-                    <img src="{{ asset('uploads/'.$gallery->image) }}" alt="{{ $gallery->title }}">
+                    <img src="{{ asset('uploads/album/'.$gallery->image) }}" alt="{{ $gallery->title }}" class="w-[400px] h-[300px] object-cover">
                 </div>
                 @endforeach
             </div>
