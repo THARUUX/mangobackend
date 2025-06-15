@@ -46,25 +46,27 @@
                 @endforeach
             </div>
         </div>
-        <div class="sm:w-1/2 sm:px-40 px-10 py-10 sm:py-0 bg-white flex flex-col items-center justify-center text-black">
+        <div class="sm:w-1/2 sm:px-10 lg:px-20 px-10 py-10 sm:py-0 bg-white flex flex-col items-center justify-center text-black">
             <div class="font-sec text-xl sm:text-4xl">Enjoy with your love</div>
             <div class="text-4xl sm:text-6xl font-black my-5 sm:my-10">Testimonials</div>
             <div class="text-lg">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
             <div class="swiper mySwiper mt-12 relative w-full max-w-6xl mx-auto px-4">
-                <div class="swiper-wrapper">
+                <!-- Navigation buttons positioned outside the slider for better visibility -->
+                <div class="swiper-button-prev absolute left-0 z-10 transform -translate-y-1/2 -translate-x-1"></div>
+                <div class="swiper-button-next absolute right-0 z-10 transform -translate-y-1/2 translate-x-1"></div>
+
+                <div class="swiper-wrapper py-10">
                     @foreach($testimonials as $index => $testimonial)
-                        <div class="swiper-slide flex flex-col items-center">
-                            <img src="{{ $testimonial['image'] }}" class="rounded-full border-4 border-orange-400 w-24 h-24 md:w-32 md:h-auto object-cover" alt="{{ $testimonial['name'] }}" />
-                            <h4 class="text-xl font-bold mt-4">{{ $testimonial['name'] }}</h4>
-                            <p class="text-gray-500">{{ $testimonial['title'] }}</p>
-                            <div class="text-orange-400 mt-2 text-lg">★★★★★</div>
+                        <div class="swiper-slide flex flex-col items-center justify-center">
+                            <div class="testimonial-card flex flex-col items-center">
+                                <img src="{{ $testimonial['image'] }}" class="rounded-full border-4 border-orange-400 w-24 h-24 md:w-32 md:h-32 object-cover" alt="{{ $testimonial['name'] }}" />
+                                <h4 class="text-xl font-bold mt-4 text-center">{{ $testimonial['name'] }}</h4>
+                                <p class="text-gray-500 text-center">{{ $testimonial['title'] }}</p>
+                                <div class="text-orange-400 mt-2 text-lg text-center">★★★★★</div>
+                            </div>
                         </div>
                     @endforeach
                 </div>
-
-                <!-- Navigation -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -76,6 +78,20 @@
     <style>
         .swiper-slide {
             display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            height: auto !important;
+        }
+
+        .testimonial-card {
+            max-width: 300px;
+            transition: transform 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .swiper-slide-active .testimonial-card {
+            transform: scale(1.05);
         }
 
         .testimonial-content {
@@ -98,11 +114,23 @@
         .swiper-button-next,
         .swiper-button-prev {
             color: #FF9933;
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .swiper-button-next:hover,
         .swiper-button-prev:hover {
             color: #02515A;
+            background: #f5f5f5;
         }
     </style>
     @endpush
@@ -114,23 +142,32 @@
             const swiper = new Swiper(".mySwiper", {
                 loop: true,
                 centeredSlides: true,
-                spaceBetween: 30,
+                spaceBetween: 40,
+                effect: "coverflow",
+                grabCursor: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false,
+                },
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
                 breakpoints: {
                     0: {
-                        slidesPerView: 1.2,
+                        slidesPerView: 1.1,
                     },
                     640: {
-                        slidesPerView: 1.5,
+                        slidesPerView: 1.3,
                     },
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: 1.8,
                     },
                     1024: {
-                        slidesPerView: 3,
+                        slidesPerView: 2.5,
                     }
                 },
                 on: {
