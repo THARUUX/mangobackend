@@ -517,8 +517,6 @@
         </section>
     </div>
 
-    @include('frontend.components.testimonials')
-
 @endsection
 
 @section('additional_css')
