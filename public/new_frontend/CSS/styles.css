@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
+
+.font-pri{
+    font-family: "Palanquin", sans-serif !important;
+}
+
+.font-sec{
+    font-family: "Mansalva", sans-serif !important;
+}
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
+.crsl-cont{
+/* UI Properties */
+background: transparent linear-gradient(180deg, var(--unnamed-color-02515a00) 0%, #02515A 100%) 0% 0% no-repeat padding-box;
+background: transparent linear-gradient(180deg, #02515A00 0%, #02515A 100%) 0% 0% no-repeat padding-box;
+}

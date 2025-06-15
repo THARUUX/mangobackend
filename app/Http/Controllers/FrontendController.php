@@ -13,27 +13,27 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.pages.home');
+        return view('frontend.pages.new_home');
     }
 
     public function about()
     {
-        return view('frontend.pages.about');
+        return view('frontend.pages.new_about');
     }
 
     public function service()
     {
-        return view('frontend.pages.service');
+        return view('frontend.pages.new_service');
     }
     public function contact()
     {
-        return view('frontend.pages.contact');
+        return view('frontend.pages.new_contact');
     }
     public function gallery()
     {
         $galleries = GalleryImages::limit(10)->get();
         $allGalleries = GalleryImages::all();
-        return view('frontend.pages.gallery', compact('galleries', 'allGalleries'));
+        return view('frontend.pages.new_gallery', compact('galleries', 'allGalleries'));
     }
     public function blog(Request $request)
     {
@@ -48,13 +48,13 @@ class FrontendController extends Controller
             $allPosts = Post::whereIn('category_id', $categoryIds)->get();
         } else {
             $categoryIds = Category::where('category_type_id', '1')->pluck('id');
-            $posts = Post::whereIn('category_id', values: $categoryIds)->limit(10)->get();
+            $posts = Post::whereIn('category_id', $categoryIds)->limit(10)->get();
             $allPosts = Post::whereIn('category_id', $categoryIds)->get();
         }
 
 
         $types = Category::where('category_type_id', 1)->get();
-        return view('frontend.pages.blog', compact('posts', 'types', 'allPosts'));
+        return view('frontend.pages.new_blog', compact('posts', 'types', 'allPosts'));
     }
 
     public function loardMoreBlogs(Request $request)
@@ -87,7 +87,7 @@ class FrontendController extends Controller
         $data = [
             'success' => true,
             'message' => 'success',
-            'html' => view('frontend.components.blog.load_more_blogs', compact('posts', 'hasMore'))->render(),
+            'html' => view('frontend.components.blog.new_load_more_blogs', compact('posts', 'hasMore'))->render(),
             'count' => $count
         ];
 
@@ -108,7 +108,7 @@ class FrontendController extends Controller
         $data = [
             'success' => true,
             'message' => 'success',
-            'html' => view('frontend.components.gallery.load_more_galleries', compact('galleries', 'hasMore'))->render(),
+            'html' => view('frontend.components.gallery.new_load_more_galleries', compact('galleries', 'hasMore'))->render(),
             'count' => $count
         ];
         return response()->json($data, 200);
@@ -117,8 +117,9 @@ class FrontendController extends Controller
     public function blogDetail($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
-        $recents = Post::where('id', '!=', $post->id)->latest()->limit(3)->get();
+        $recentPosts = Post::where('id', '!=', $post->id)->latest()->limit(3)->get();
+        $categories = Category::where('category_type_id', 1)->get();
 
-        return view('frontend.pages.blog-detail', compact('post', 'recents'));
+        return view('frontend.pages.new_blog_detail', compact('post', 'recentPosts', 'categories'));
     }
 }
