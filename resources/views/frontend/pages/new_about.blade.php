@@ -30,78 +30,9 @@
         </div>
 
         <!-- Testimonials Section -->
-        <section class="w-full flex justify-center flex-col items-center">
-            <div class="w-full flex sm:flex-row flex-col">
-                <div class="w-full sm:w-1/2 sm:px-44 px-10 py-10 sm:py-44 flex justify-center items-center bg-[#02515A] text-white">
-                    <div class="w-full">
-                        <div class="text-3xl font-bold">Naduni Pramodya</div>
-                        <div class="text-xl">Amazing Traveller</div>
-                        <div class="text-md mt-10">
-                            "Our journey with Happy Mango Tours was absolutely incredible! They crafted a perfect blend of adventure and relaxation. From exploring ancient temples to wildlife safaris and pristine beaches, every moment was thoughtfully planned. The local guides shared fascinating insights that made Sri Lanka come alive for us. This wasn't just a vacation - it was an unforgettable experience that exceeded all our expectations!"
-                        </div>
-                    </div>
-                </div>
-                <div class="sm:w-1/2 sm:px-40 px-10 py-10 sm:py-0 bg-white flex flex-col items-center justify-center text-black">
-                    <div class="font-sec text-xl sm:text-4xl">Our Happy Travelers</div>
-                    <div class="text-4xl sm:text-6xl font-black my-5 sm:my-10">Testimonials</div>
-                    <div class="text-lg text-gray-600">Hear what our guests have to say about their Sri Lankan adventures</div>
-                    <div class="swiper testimonials-swiper mt-12 relative w-full max-w-6xl mx-auto px-4">
-                        <div class="swiper-wrapper">
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide flex flex-col items-center">
-                                <img src="https://randomuser.me/api/portraits/women/1.jpg" class="rounded-full border-4 border-[#ff9933] w-24 h-24 md:w-32 md:h-32 object-cover" />
-                                <h4 class="text-xl font-bold mt-4">Naduni Pramodya</h4>
-                                <p class="text-[#02515A]">Amazing Traveller</p>
-                                <div class="text-[#ff9933] mt-2 text-lg">★★★★★</div>
-                                <p class="text-gray-600 mt-4 text-center px-6">"The perfect mix of adventure and luxury. Every detail was taken care of!"</p>
-                            </div>
+        @include('frontend.components.testimonials')
 
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide flex flex-col items-center">
-                                <img src="https://randomuser.me/api/portraits/men/2.jpg" class="rounded-full border-4 border-[#ff9933] w-24 h-24 md:w-32 md:h-32 object-cover" />
-                                <h4 class="text-xl font-bold mt-4">John Doe</h4>
-                                <p class="text-[#02515A]">Adventure Seeker</p>
-                                <div class="text-[#ff9933] mt-2 text-lg">★★★★★</div>
-                                <p class="text-gray-600 mt-4 text-center px-6">"The wildlife safaris were incredible! Unforgettable encounters with nature."</p>
-                            </div>
-
-                            <!-- Slide 3 -->
-                            <div class="swiper-slide flex flex-col items-center">
-                                <img src="https://randomuser.me/api/portraits/women/3.jpg" class="rounded-full border-4 border-[#ff9933] w-24 h-24 md:w-32 md:h-32 object-cover" />
-                                <h4 class="text-xl font-bold mt-4">Sarah Lee</h4>
-                                <p class="text-[#02515A]">Nature Lover</p>
-                                <div class="text-[#ff9933] mt-2 text-lg">★★★★★</div>
-                                <p class="text-gray-600 mt-4 text-center px-6">"Found hidden gems we'd never have discovered on our own. Amazing experience!"</p>
-                            </div>
-
-                            <!-- Slide 4 -->
-                            <div class="swiper-slide flex flex-col items-center">
-                                <img src="https://randomuser.me/api/portraits/men/4.jpg" class="rounded-full border-4 border-[#ff9933] w-24 h-24 md:w-32 md:h-32 object-cover" />
-                                <h4 class="text-xl font-bold mt-4">Mike Ross</h4>
-                                <p class="text-[#02515A]">Cultural Explorer</p>
-                                <div class="text-[#ff9933] mt-2 text-lg">★★★★★</div>
-                                <p class="text-gray-600 mt-4 text-center px-6">"The cultural insights and local experiences were beyond expectations!"</p>
-                            </div>
-
-                            <!-- Slide 5 -->
-                            <div class="swiper-slide flex flex-col items-center">
-                                <img src="https://randomuser.me/api/portraits/women/5.jpg" class="rounded-full border-4 border-[#ff9933] w-24 h-24 md:w-32 md:h-32 object-cover" />
-                                <h4 class="text-xl font-bold mt-4">Emily Clark</h4>
-                                <p class="text-[#02515A]">Beach Enthusiast</p>
-                                <div class="text-[#ff9933] mt-2 text-lg">★★★★★</div>
-                                <p class="text-gray-600 mt-4 text-center px-6">"Perfect beach getaways and amazing coastal experiences. Will return!"</p>
-                            </div>
-                        </div>
-
-                        <!-- Navigation -->
-                        <div class="swiper-button-prev text-[#ff9933]"></div>
-                        <div class="swiper-button-next text-[#ff9933]"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-            <!-- FAQ Section -->
+        <!-- FAQ Section -->
         <section class="w-full flex flex-col sm:flex-row bg-white" id="faq">
             <div class="flex w-full sm:w-1/2 p-10 sm:p-20">
                 <div class="flex flex-col gap-10 ">

@@ -313,72 +313,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="w-full flex justify-center flex-col items-center" id="testimonials">
-            <div class="w-full flex sm:flex-row flex-col">
-                <div class="w-full sm:w-1/2 sm:px-44 px-10 py-10 sm:py-44 flex justify-center items-center bg-[#02515A] text-white">
-                    <div class="w-full">
-                        <div class="text-3xl font-bold">Naduni Pramodya</div>
-                        <div class="text-xl">Amazing Traveller</div>
-                        <div class="text-md mt-10">
-                            Our family trip with Happy Mango Tours exceeded all expectations! From the moment we arrived, their attention to detail was exceptional. Our guide was knowledgeable, friendly, and made sure our children had an amazing experience. The accommodations were perfect for our needs, and the itinerary balanced adventure with relaxation. We particularly loved the wildlife safari and the beach stay in Mirissa. Thank you for making our Sri Lanka vacation truly unforgettable!
-                        </div>
-                    </div>
-                </div>
-                <div class=" sm:w-1/2 sm:px-40 px-10 py-10 sm:py-0 bg-white flex flex-col items-center justify-center text-black">
-                    <div class="font-sec text-xl sm:text-4xl">Enjoy with your love</div>
-                    <div class="text-4xl sm:text-6xl font-black my-5 sm:my-10">Testimonials</div>
-                    <div class="text-lg">What our happy travelers say about their experiences with us.</div>
-                    <div class="mt-12 relative w-full max-w-6xl mx-auto px-4">
-                        <div class="swiper-container testimonials-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm h-full">
-                                        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="rounded-full border-4 border-orange-400 w-24 h-24 object-cover" />
-                                        <h4 class="text-xl font-bold mt-4">Naduni Pramodya</h4>
-                                        <p class="text-gray-500">Amazing Traveller</p>
-                                        <div class="text-orange-400 mt-2 text-lg">★★★★★</div>
-                                        <p class="text-gray-600 mt-4 text-center">"Our family trip exceeded all expectations! The guide was knowledgeable and the itinerary perfectly balanced adventure with relaxation."</p>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm h-full">
-                                        <img src="https://randomuser.me/api/portraits/men/2.jpg" class="rounded-full border-4 border-orange-400 w-24 h-24 object-cover" />
-                                        <h4 class="text-xl font-bold mt-4">John Doe</h4>
-                                        <p class="text-gray-500">Adventure Seeker</p>
-                                        <div class="text-orange-400 mt-2 text-lg">★★★★★</div>
-                                        <p class="text-gray-600 mt-4 text-center">"The safari tours were incredible! Our guide knew exactly where to find wildlife and shared fascinating information about local culture."</p>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm h-full">
-                                        <img src="https://randomuser.me/api/portraits/women/3.jpg" class="rounded-full border-4 border-orange-400 w-24 h-24 object-cover" />
-                                        <h4 class="text-xl font-bold mt-4">Sarah Lee</h4>
-                                        <p class="text-gray-500">Nature Lover</p>
-                                        <div class="text-orange-400 mt-2 text-lg">★★★★★</div>
-                                        <p class="text-gray-600 mt-4 text-center">"Happy Mango Tours helped us discover hidden gems of Sri Lanka that we'd never have found on our own. Truly a memorable experience!"</p>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm h-full">
-                                        <img src="https://randomuser.me/api/portraits/men/4.jpg" class="rounded-full border-4 border-orange-400 w-24 h-24 object-cover" />
-                                        <h4 class="text-xl font-bold mt-4">Michael Wong</h4>
-                                        <p class="text-gray-500">Food Enthusiast</p>
-                                        <div class="text-orange-400 mt-2 text-lg">★★★★★</div>
-                                        <p class="text-gray-600 mt-4 text-center">"The culinary tour was outstanding! We experienced authentic Sri Lankan cuisine and even learned how to cook some dishes ourselves."</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add pagination -->
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        @include('frontend.components.testimonials')
 
         <!-- FAQ Section -->
         <section class="w-full flex flex-col sm:flex-row bg-white" id="faq">
@@ -581,6 +516,9 @@
             </div>
         </section>
     </div>
+
+    @include('frontend.components.testimonials')
+
 @endsection
 
 @section('additional_css')
