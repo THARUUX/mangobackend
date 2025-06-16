@@ -18,6 +18,7 @@
     <div class="hidden sm:flex order-3">
         <a href="{{ route('gallery') }}" class="sm:px-10">GALLERY</a>
         <a href="{{ route('blog') }}" class="sm:px-10">BLOG</a>
+      <a href="{{ route('tours') }}" class="sm:px-10">TPD</a>
         <a href="{{ route('contact') }}" class="sm:px-10">CONTACT</a>
     </div>
 </div>
