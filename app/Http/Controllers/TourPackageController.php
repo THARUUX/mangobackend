@@ -17,7 +17,7 @@ class TourPackageController extends Controller
             ->where('active', true)
             ->get();
 
-        return view('frontend.pages.tour_packages', compact('tailorMadeTours', 'roundTours'));
+        return view('frontend.pages.tpd', compact('tailorMadeTours', 'roundTours'));
     }
 
     public function show($slug)
@@ -46,6 +46,12 @@ class TourPackageController extends Controller
             ->get();
 
         return view('frontend.pages.round_tours', compact('tours'));
+    }
+
+    public function tpd()
+    {
+        // This is a template view for the TPD (Tour Package Detail) showcase
+        return view('frontend.pages.tpd');
     }
 
     public function inquire(Request $request)

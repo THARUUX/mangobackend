@@ -24,6 +24,7 @@ Route::post('/contactFormSubmit', [ContactController::class, 'submitContactForm'
 Route::get('/tours', [TourPackageController::class, 'index'])->name('tours');
 Route::get('/tours/tailor-made', [TourPackageController::class, 'tailorMade'])->name('tours.tailor-made');
 Route::get('/tours/round-tour', [TourPackageController::class, 'roundTour'])->name('tours.round-tour');
+Route::get('/tours/tpd', [TourPackageController::class, 'tpd'])->name('tours.tpd'); // Template view for TPD showcase
 Route::get('/tours/{slug}', [TourPackageController::class, 'show'])->name('tours.detail');
 Route::post('/tours/inquire', [TourPackageController::class, 'inquire'])->name('tour.inquire');
 
