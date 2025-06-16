@@ -1,4 +1,4 @@
-<div class="w-full bg-[#02515A] flex justify-between items-center px-6 py-3 text-xs sm:text-md">
+<!-- <div class="w-full bg-[#02515A] flex justify-between items-center px-6 py-3 text-xs sm:text-md">
     <div class="sm:flex grow gap-10 hidden">
         <div class="flex gap-2">
             <img src="/Assets/Group 7004.png" alt="">
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-            
+
 <div class="w-full flex justify-between px-5 sm:px-0 sm:justify-center bg-white text-black font-bold text-xs sm:text-sm items-center py-5 relative">
     <div class=" hidden sm:flex order-2 sm:order-1">
         <a href="/" class="sm:px-10">HOME</a>
@@ -55,4 +55,4 @@
         <a href="blog.php" class="sm:px-10">BLOG</a>
         <a href="contact.php" class="sm:px-10">CONTACT</a>
     </div>
-</div>
+</div> -->
