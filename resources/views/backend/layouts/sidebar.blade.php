@@ -58,12 +58,12 @@
                         </a>
                     </li>
 
-                    <li class="slide">
+                    {{-- <li class="slide">
                         <a href="/admin/tour-packages" id="tourPackages" class="side-menu__item">
                             <i class="fi fi-rr-plane side-menu__icon"></i>
                             <span class="side-menu__label">Tour Packages</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="slide">
                         <a href="/admin/category" id="categories" class="side-menu__item">
