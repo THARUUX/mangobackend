@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\CategoryType;
 use App\Models\GalleryImages;
+use App\Models\TourPackage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -23,8 +24,28 @@ class FrontendController extends Controller
 
     public function service()
     {
-        return view('frontend.pages.new_service');
+        $tourPackages = TourPackage::where('active', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+        $tailorMadeTours = TourPackage::where('type', 'tailor-made')
+            ->where('active', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+        $roundTours = TourPackage::where('type', 'round-tour')
+            ->where('active', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+        $featuredTours = TourPackage::where('featured', true)
+            ->where('active', true)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+        return view('frontend.pages.new_service', compact('tourPackages', 'tailorMadeTours', 'roundTours', 'featuredTours'));
     }
+
     public function contact()
     {
         return view('frontend.pages.new_contact');

@@ -52,16 +52,30 @@
                     </li>
 
                     <li class="slide">
-                        <a href="/admin/gallery" id="categories" class="side-menu__item">
+                        <a href="/admin/gallery" id="gallery" class="side-menu__item">
                             <i class="fi fi-rr-picture side-menu__icon"></i>
                             <span class="side-menu__label">Gallery</span>
                         </a>
                     </li>
 
+                    {{-- <li class="slide">
+                        <a href="/admin/tour-packages" id="tourPackages" class="side-menu__item">
+                            <i class="fi fi-rr-plane side-menu__icon"></i>
+                            <span class="side-menu__label">Tour Packages</span>
+                        </a>
+                    </li> --}}
+
                     <li class="slide">
                         <a href="/admin/category" id="categories" class="side-menu__item">
                             <i class="fi fi-rr-apps side-menu__icon"></i>
                             <span class="side-menu__label">Categories</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a href="/admin/tour-packages" id="tour-packages" class="side-menu__item">
+                            <i class="fi fi-rr-plane side-menu__icon"></i>
+                            <span class="side-menu__label">Tour Packages</span>
                         </a>
                     </li>
 

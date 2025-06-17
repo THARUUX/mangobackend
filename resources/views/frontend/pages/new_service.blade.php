@@ -13,58 +13,77 @@
         <div class="py-20 w-full px-5 sm:px-10 flex flex-col bg-white text-black items-center justify-center gap-5">
             @include('frontend.components.tailor_made_intro', ['isActive' => true])
 
+            <!-- All Tour Packages Section -->
+            <div id="all-packages" class="w-full pt-10">
+                <div class="w-full text-4xl sm:text-6xl font-pri font-black text-center mb-8">Explore Our Tour Packages</div>
+                <div class="sm:w-3/4 mx-auto flex justify-center text-center font-pri text-sm sm:text-md mb-10">
+                    Discover the best of Sri Lanka through our carefully curated tour packages. Whether you're looking for adventure, relaxation, or cultural immersion, we have something for everyone.
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @forelse($tourPackages as $tour)
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $tour->image) }}" class="w-full h-60 object-cover" alt="{{ $tour->name }}">
+                                <div class="absolute top-0 right-0 bg-{{ $tour->type == 'tailor-made' ? '[#ff9933]' : '[#02515A]' }} rounded-bl-xl text-white text-xs font-bold px-3 py-2">
+                                    {{ $tour->type == 'tailor-made' ? 'TAILOR MADE TOUR' : 'ROUND TOUR' }}
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3">{{ $tour->name }}</h3>
+                                <div class="flex items-center mb-3">
+                                    <span class="text-yellow-500 mr-1">★★★★★</span>
+                                    <span class="text-gray-600 text-sm">(24 reviews)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">{{ \Illuminate\Support\Str::limit($tour->short_description, 100) }}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-bold text-[#FF9933]">${{ $tour->price }}</span>
+                                    <a href="{{ route('tours.detail', $tour->slug) }}" class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-span-3 text-center py-10">
+                            <p>No tour packages available at the moment. Please check back later.</p>
+                        </div>
+                    @endforelse
+                </div>
+                <div class="w-full flex justify-center mt-10">
+                    <a href="{{ route('tours') }}" class="bg-[#ff9933] hover:bg-[#ffab58] duration-200 text-white font-bold py-2 px-8 rounded-full cursor-pointer">VIEW ALL TOUR PACKAGES</a>
+                </div>
+            </div>
 
 
             <div id="tailor-made" class="w-full pt-10">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Tour Package Cards will be displayed here -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/Rectangle 10 copy 5.png') }}" class="w-full h-60 object-cover" alt="Cultural Heritage Tour">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Cultural Heritage Tour</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(24 reviews)</span>
+                    <!-- Tailor Made Tour Cards -->
+                    @forelse($tailorMadeTours as $tour)
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $tour->image) }}" class="w-full h-60 object-cover" alt="{{ $tour->name }}">
+                                <div class="absolute top-0 right-0 bg-[#ff9933] rounded-bl-xl text-white text-xs font-bold px-3 py-2">TAILOR MADE TOUR</div>
                             </div>
-                            <p class="text-gray-700 mb-4">Discover Sri Lanka's UNESCO World Heritage sites, ancient temples, and rich cultural traditions.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">From $899</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/img(18).png') }}" class="w-full h-60 object-cover" alt="Wildlife Safari Adventure">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Wildlife Safari Adventure</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(18 reviews)</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">Experience thrilling safaris in Sri Lanka's national parks to see elephants, leopards, and exotic birds.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">From $1,099</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3">{{ $tour->name }}</h3>
+                                <div class="flex items-center mb-3">
+                                    <span class="text-yellow-500 mr-1">★★★★★</span>
+                                    <span class="text-gray-600 text-sm">(24 reviews)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">{{ \Illuminate\Support\Str::limit($tour->short_description, 100) }}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-bold text-[#FF9933]">${{ $tour->price }}</span>
+                                    <a href="{{ route('tours.detail', $tour->slug) }}" class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/img(24).png') }}" class="w-full h-60 object-cover" alt="Beach Getaway">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Beach Getaway</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(31 reviews)</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">Relax on Sri Lanka's golden beaches with pristine waters and luxury beachfront accommodations.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">From $799</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
-                            </div>
+                    @empty
+                        <div class="col-span-3 text-center py-10">
+                            <p>No tailor-made tours available at the moment. Please check back later.</p>
                         </div>
-                    </div>
+                    @endforelse
+                </div>
+                <div class="w-full flex justify-center mt-10">
+                    <a href="{{ route('tours.tailor-made') }}" class="bg-[#ff9933] hover:bg-[#ffab58] duration-200 text-white font-bold py-2 px-8 rounded-full cursor-pointer">VIEW ALL TAILOR MADE TOURS</a>
                 </div>
             </div>
 
@@ -73,53 +92,69 @@
                 <div class="sm:w-3/4 mx-auto flex justify-center text-center font-pri text-sm sm:text-md mb-10">Our carefully designed Round Tours offer comprehensive journeys covering Sri Lanka's highlights in a single trip. These ready-made itineraries combine the best destinations, attractions, and experiences at great value.</div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/img(3).png') }}" class="w-full h-60 object-cover" alt="7-Day Classic Tour">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">7-Day Classic Tour</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(42 reviews)</span>
+                    @forelse($roundTours as $tour)
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $tour->image) }}" class="w-full h-60 object-cover" alt="{{ $tour->name }}">
+                                <div class="absolute top-0 right-0 bg-[#02515A] rounded-bl-xl text-white text-xs font-bold px-3 py-2">ROUND TOUR</div>
                             </div>
-                            <p class="text-gray-700 mb-4">Perfect introduction to Sri Lanka covering cultural triangle, hill country and southern beaches.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">$1,299</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3">{{ $tour->name }}</h3>
+                                <div class="flex items-center mb-3">
+                                    <span class="text-yellow-500 mr-1">★★★★★</span>
+                                    <span class="text-gray-600 text-sm">(24 reviews)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">{{ \Illuminate\Support\Str::limit($tour->short_description, 100) }}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-bold text-[#FF9933]">${{ $tour->price }}</span>
+                                    <a href="{{ route('tours.detail', $tour->slug) }}" class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @empty
+                        <div class="col-span-3 text-center py-10">
+                            <p>No round tours available at the moment. Please check back later.</p>
+                        </div>
+                    @endforelse
+                </div>
+                <div class="w-full flex justify-center mt-10">
+                    <a href="{{ route('tours.round-tour') }}" class="bg-[#ff9933] hover:bg-[#ffab58] duration-200 text-white font-bold py-2 px-8 rounded-full cursor-pointer">VIEW ALL ROUND TOURS</a>
+                </div>
+            </div>
 
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/img(4).png') }}" class="w-full h-60 object-cover" alt="10-Day Complete Island Tour">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">10-Day Complete Island Tour</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(36 reviews)</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">Comprehensive journey covering all major attractions and hidden gems of Sri Lanka.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">$1,899</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Featured Tours Section -->
+            <div id="featured-tours" class="w-full pt-20">
+                <div class="w-full text-4xl sm:text-6xl font-pri font-black text-center mb-10">Featured Tour Packages</div>
+                <div class="sm:w-3/4 mx-auto flex justify-center text-center font-pri text-sm sm:text-md mb-10">Experience our most popular and highly-rated tour packages across Sri Lanka. These exclusive selections offer the best Sri Lankan experiences.</div>
 
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('new_frontend/Assets/av1.png') }}" class="w-full h-60 object-cover" alt="14-Day Ultimate Sri Lanka">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">14-Day Ultimate Sri Lanka</h3>
-                            <div class="flex items-center mb-3">
-                                <span class="text-yellow-500 mr-1">★★★★★</span>
-                                <span class="text-gray-600 text-sm">(29 reviews)</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @forelse($featuredTours as $tour)
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="relative">
+                                <img src="{{ asset('storage/' . $tour->image) }}" class="w-full h-60 object-cover" alt="{{ $tour->name }}">
+                                <div class="absolute top-0 right-0 bg-[#8A2BE2] rounded-bl-xl text-white text-xs font-bold px-3 py-2">FEATURED</div>
+                                <div class="absolute top-0 left-0 bg-{{ $tour->type == 'tailor-made' ? '[#ff9933]' : '[#02515A]' }} rounded-br-xl text-white text-xs font-bold px-3 py-2">
+                                    {{ $tour->type == 'tailor-made' ? 'TAILOR MADE' : 'ROUND TOUR' }}
+                                </div>
                             </div>
-                            <p class="text-gray-700 mb-4">The most complete Sri Lankan experience at a relaxed pace with premium accommodations.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-[#FF9933]">$2,499</span>
-                                <button class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</button>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-3">{{ $tour->name }}</h3>
+                                <div class="flex items-center mb-3">
+                                    <span class="text-yellow-500 mr-1">★★★★★</span>
+                                    <span class="text-gray-600 text-sm">(24 reviews)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">{{ \Illuminate\Support\Str::limit($tour->short_description, 100) }}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-bold text-[#FF9933]">${{ $tour->price }}</span>
+                                    <a href="{{ route('tours.detail', $tour->slug) }}" class="bg-[#FF9933] text-white py-2 px-4 rounded-full hover:bg-[#e88929]">View Details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @empty
+                        <div class="col-span-3 text-center py-10">
+                            <p>No featured tours available at the moment. Please check back later.</p>
+                        </div>
+                    @endforelse
                 </div>
             </div>
 
