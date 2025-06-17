@@ -73,13 +73,13 @@
                         <div class="col-md-6 mb-3 d-flex align-items-end">
                             <div class="form-check me-4">
                                 <input class="form-check-input" type="checkbox" id="featured" name="featured" value="1" {{ old('featured') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="featured">
+                                <label class="form-check-label" for="featured" style="color: white">
                                     Featured
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="active" name="active" value="1" {{ old('active', '1') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="active">
+                                <label class="form-check-label" for="active" style="color: white">
                                     Active
                                 </label>
                             </div>
@@ -138,14 +138,14 @@
                             <div id="includedItemsContainer">
                                 <div class="input-group mb-2">
                                     <input type="text" class="form-control" name="included[]" placeholder="E.g. Airport pickup and drop-off" required>
-                                    <button type="button" class="btn btn-danger remove-item" disabled>
+                                    {{-- <button type="button" class="btn btn-danger remove-item" disabled>
                                         <i class="fi fi-rr-trash"></i>
-                                    </button>
+                                    </button> --}}
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-sm btn-success mt-2" id="addIncludedItem">
+                            {{-- <button type="button" class="btn btn-sm btn-success mt-2" id="addIncludedItem">
                                 <i class="fi fi-rr-add"></i> Add Item
-                            </button>
+                            </button> --}}
                         </div>
 
                         <div class="col-md-6">
@@ -153,14 +153,14 @@
                             <div id="excludedItemsContainer">
                                 <div class="input-group mb-2">
                                     <input type="text" class="form-control" name="excluded[]" placeholder="E.g. Personal expenses" required>
-                                    <button type="button" class="btn btn-danger remove-item" disabled>
+                                    {{-- <button type="button" class="btn btn-danger remove-item" disabled>
                                         <i class="fi fi-rr-trash"></i>
-                                    </button>
+                                    </button> --}}
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-sm btn-success mt-2" id="addExcludedItem">>
+                            {{-- <button type="button" class="btn btn-sm btn-success mt-2" id="addExcludedItem">
                                 <i class="fi fi-rr-add"></i> Add Item
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -173,12 +173,12 @@
                 <div class="card-body">
                     <div id="itineraryContainer">
                         <div class="itinerary-item card mb-4">
-                            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            {{-- <div class="card-header bg-light d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Day 1</h5>
                                 <button type="button" class="btn btn-sm btn-danger remove-itinerary" disabled>
                                     <i class="fi fi-rr-trash"></i> Remove
                                 </button>
-                            </div>
+                            </div> --}}
                             <div class="card-body">
                                 <div class="row">
                                     <input type="hidden" name="itinerary[0][day]" value="1" class="day-number">
@@ -195,7 +195,7 @@
 
                                     <div class="col-12 mb-3">
                                         <label class="form-label">Description <span class="text-danger">*</span></label>
-                                        <textarea class="form-control itinerary-description" name="itinerary[0][description]" rows="4" required></textarea>
+                                        <textarea id="itinerary-description-1-{{ time() }}" class="form-control itinerary-description" name="itinerary[0][description]" rows="4" required></textarea>
                                     </div>
 
                                     <div class="col-12">
@@ -207,9 +207,9 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-success" id="addItineraryDay">
+                    {{-- <button type="button" class="btn btn-success" id="addItineraryDay">
                         <i class="fi fi-rr-add"></i> Add Another Day
-                    </button>
+                    </button> --}}
                 </div>
             </div>
 
@@ -224,191 +224,66 @@
 @endsection
 
 @push('scripts')
+<!-- Include simplified JS for direct button functionality -->
+<script src="{{ asset('js/simple-tour-form.js') }}"></script>
+
+<!-- Fallback inline script if external JS fails -->
 <script>
-    // Initialize TinyMCE
-    tinymce.init({
-        selector: '.tinymce',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        height: 400
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for all other scripts to finish
+    setTimeout(function() {
+        // Check if buttons have event handlers by adding a backup
+        const addIncludedBtn = document.getElementById('addIncludedItem');
+        if (addIncludedBtn && !addIncludedBtn._hasClickHandler) {
+            console.log('Applying fallback click handler');
+            addIncludedBtn.addEventListener('click', function() {
+                const container = document.getElementById('includedItemsContainer');
+                if (container) {
+                    const newItem = document.createElement('div');
+                    newItem.classList.add('input-group', 'mb-2');
+                    newItem.innerHTML = `
+                        <input type="text" class="form-control" name="included[]" placeholder="E.g. Airport pickup and drop-off" required>
+                        <button type="button" class="btn btn-danger remove-item">
+                            <i class="fi fi-rr-trash"></i>
+                        </button>
+                    `;
+                    container.appendChild(newItem);
 
-    // Initialize TinyMCE for itinerary descriptions
-    function initTinyMCEForItinerary() {
-        tinymce.init({
-            selector: '.itinerary-description',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-            height: 200
-        });
-    }
-
-    // Image preview functionality
-    document.getElementById('image').onchange = function(evt) {
-        const [file] = this.files;
-        if (file) {
-            const preview = document.getElementById('imagePreview');
-            preview.src = URL.createObjectURL(file);
-            preview.style.display = 'block';
-        }
-    };
-
-    // Make sure to add these event listeners after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        // Included Items
-        document.getElementById('addIncludedItem').addEventListener('click', function() {
-            const container = document.getElementById('includedItemsContainer');
-            const newItem = document.createElement('div');
-            newItem.classList.add('input-group', 'mb-2');
-            newItem.innerHTML = `
-                <input type="text" class="form-control" name="included[]" placeholder="E.g. Airport pickup and drop-off" required>
-                <button type="button" class="btn btn-danger remove-item">
-                    <i class="fi fi-rr-trash"></i>
-                </button>
-            `;
-            container.appendChild(newItem);
-
-            // Enable all remove buttons if there's more than one item
-            if (container.children.length > 1) {
-                const buttons = container.querySelectorAll('.remove-item');
-                buttons.forEach(btn => btn.disabled = false);
-            }
-        });
-
-        // Excluded Items
-        document.getElementById('addExcludedItem').addEventListener('click', function() {
-            const container = document.getElementById('excludedItemsContainer');
-            const newItem = document.createElement('div');
-            newItem.classList.add('input-group', 'mb-2');
-            newItem.innerHTML = `
-                <input type="text" class="form-control" name="excluded[]" placeholder="E.g. Personal expenses" required>
-                <button type="button" class="btn btn-danger remove-item">
-                    <i class="fi fi-rr-trash"></i>
-                </button>
-            `;
-            container.appendChild(newItem);
-
-            // Enable all remove buttons if there's more than one item
-            if (container.children.length > 1) {
-                const buttons = container.querySelectorAll('.remove-item');
-                buttons.forEach(btn => btn.disabled = false);
-            }
-        });
-    });
-
-    // Event delegation for removing included/excluded items
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.remove-item')) {
-            const button = e.target.closest('.remove-item');
-            const container = button.closest('.input-group').parentElement;
-            button.closest('.input-group').remove();
-
-            // If only one item remains, disable its remove button
-            if (container.children.length === 1) {
-                const lastButton = container.querySelector('.remove-item');
-                if (lastButton) lastButton.disabled = true;
-            }
-        }
-    });
-
-    // Itinerary Days
-    let dayCounter = 1;
-
-    document.getElementById('addItineraryDay').addEventListener('click', function() {
-        dayCounter++;
-
-        const container = document.getElementById('itineraryContainer');
-        const newDay = document.createElement('div');
-        newDay.classList.add('itinerary-item', 'card', 'mb-4');
-
-        newDay.innerHTML = `
-            <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Day ${dayCounter}</h5>
-                <button type="button" class="btn btn-sm btn-danger remove-itinerary">
-                    <i class="fi fi-rr-trash"></i> Remove
-                </button>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <input type="hidden" name="itinerary[${dayCounter-1}][day]" value="${dayCounter}" class="day-number">
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Title <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="itinerary[${dayCounter-1}][title]" required>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Location <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="itinerary[${dayCounter-1}][location]" required>
-                    </div>
-
-                    <div class="col-12 mb-3">
-                        <label class="form-label">Description <span class="text-danger">*</span></label>
-                        <textarea class="form-control itinerary-description" name="itinerary[${dayCounter-1}][description]" rows="4" required></textarea>
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label">Image (Optional)</label>
-                        <input type="file" class="form-control itinerary-image" name="itinerary[${dayCounter-1}][image]" accept="image/*">
-                    </div>
-                </div>
-            </div>
-        `;
-
-        container.appendChild(newDay);
-
-        // Enable all remove buttons if there's more than one day
-        if (container.children.length > 1) {
-            const buttons = container.querySelectorAll('.remove-itinerary');
-            buttons.forEach(btn => btn.disabled = false);
-        }
-
-        // Initialize TinyMCE for the new textarea
-        tinymce.init({
-            selector: `.itinerary-item:nth-child(${dayCounter}) .itinerary-description`,
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-            height: 200
-        });
-    });
-
-    // Event delegation for removing itinerary days
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.remove-itinerary')) {
-            const button = e.target.closest('.remove-itinerary');
-            const container = document.getElementById('itineraryContainer');
-
-            button.closest('.itinerary-item').remove();
-
-            // If only one day remains, disable its remove button
-            if (container.children.length === 1) {
-                const lastButton = container.querySelector('.remove-itinerary');
-                if (lastButton) lastButton.disabled = true;
-            }
-
-            // Renumber the days
-            const days = container.querySelectorAll('.itinerary-item');
-            days.forEach((day, index) => {
-                const dayNumber = index + 1;
-                day.querySelector('h5').textContent = `Day ${dayNumber}`;
-                day.querySelector('.day-number').value = dayNumber;
-
-                // Update the name attributes to maintain the correct array indexing
-                day.querySelectorAll('input, textarea').forEach(input => {
-                    if (input.name) {
-                        input.name = input.name.replace(/itinerary\[\d+\]/, `itinerary[${index}]`);
-                    }
-                });
+                    // Enable remove button functionality
+                    newItem.querySelector('.remove-item').addEventListener('click', function() {
+                        this.closest('.input-group').remove();
+                    });
+                }
             });
-
-            // Update the day counter
-            dayCounter = days.length;
+            addIncludedBtn._hasClickHandler = true;
         }
-    });
 
-    // Initialize TinyMCE for the first itinerary day
-    document.addEventListener('DOMContentLoaded', function() {
-        initTinyMCEForItinerary();
-    });
+        // Check excluded button too
+        const addExcludedBtn = document.getElementById('addExcludedItem');
+        if (addExcludedBtn && !addExcludedBtn._hasClickHandler) {
+            console.log('Applying fallback click handler for excluded');
+            addExcludedBtn.addEventListener('click', function() {
+                const container = document.getElementById('excludedItemsContainer');
+                if (container) {
+                    const newItem = document.createElement('div');
+                    newItem.classList.add('input-group', 'mb-2');
+                    newItem.innerHTML = `
+                        <input type="text" class="form-control" name="excluded[]" placeholder="E.g. Personal expenses" required>
+                        <button type="button" class="btn btn-danger remove-item">
+                            <i class="fi fi-rr-trash"></i>
+                        </button>
+                    `;
+                    container.appendChild(newItem);
+
+                    // Enable remove button functionality
+                    newItem.querySelector('.remove-item').addEventListener('click', function() {
+                        this.closest('.input-group').remove();
+                    });
+                }
+            });
+            addExcludedBtn._hasClickHandler = true;
+        }
+    }, 500);
+});
 </script>
 @endpush
