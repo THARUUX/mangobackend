@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TourPackage;
+use App\Models\Inquiry;
 use Illuminate\Http\Request;
 
 class TourPackageController extends Controller
@@ -57,11 +58,25 @@ class TourPackageController extends Controller
             'phone' => 'required|string|max:20',
             'date' => 'required|date',
             'adults' => 'required|integer|min:1',
+            'children' => 'nullable|integer|min:0',
             'message' => 'nullable|string',
         ]);
 
-        // Here you would typically save the inquiry to database
-        // and/or send an email notification
+        // Create a new inquiry in the database
+        $inquiry = Inquiry::create([
+            'tour_id' => $request->tour_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'date' => $request->date,
+            'adults' => $request->adults,
+            'children' => $request->children ?? 0,
+            'message' => $request->message,
+            'status' => 'new',
+        ]);
+
+        // Optional: You could send an email notification here
+        // Mail::to('your@email.com')->send(new NewInquiryNotification($inquiry));
 
         return redirect()->back()->with('success', 'Your inquiry has been sent successfully! We will contact you soon.');
     }

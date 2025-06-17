@@ -36,4 +36,12 @@ class TourPackage extends Model
     {
         return $this->hasMany(TourItinerary::class);
     }
+
+    /**
+     * Get the inquiries for this tour package.
+     */
+    public function inquiries()
+    {
+        return $this->hasMany(Inquiry::class, 'tour_id');
+    }
 }
