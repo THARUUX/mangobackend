@@ -205,19 +205,40 @@
                         </div>
                     </div>                    <div class="w-full sm:w-1/3">
                         <div class="bg-[#02515A] w-full flex flex-col p-10 sm:p-20 text-white">
-                            <div class="text-5xl font-pri font-black">Inquairy Now</div>
+                            <div class="text-5xl font-pri font-black">Inquiry Now</div>
                             <div class="py-3">It's time to plan just the perfect vacation!</div>
+
+                            @if(session('success'))
+                                <div class="bg-green-600 text-white px-4 py-3 rounded mb-4 flex items-center shadow-md">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>{{ session('success') }}</span>
+                                </div>
+                            @endif
+
+                            @if($errors->any())
+                                <div class="bg-red-600 text-white px-4 py-3 rounded mb-4 shadow-md">
+                                    <ul class="list-disc list-inside">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <form action="{{ route('tour.inquire') }}" method="POST" class="flex flex-col gap-5">
                                 @csrf
                                 <input type="hidden" name="tour_id" value="{{ $tourPackage->id }}">
-                                <input type="text" name="name" placeholder="NAME" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" required>
-                                <input type="email" name="email" placeholder="EMAIL" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" required>
-                                <input type="tel" name="phone" placeholder="PHONE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" required>
-                                <input type="date" name="date" placeholder="DATE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" required>
-                                <input type="number" name="adults" placeholder="NUMBER OF ADULTS" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" required>
-                                <textarea name="message" placeholder="MESSAGE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300"></textarea>
+                                <input type="text" name="name" placeholder="NAME" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('name') }}" required>
+                                <input type="email" name="email" placeholder="EMAIL" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('email') }}" required>
+                                <input type="tel" name="phone" placeholder="PHONE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('phone') }}" required>
+                                <input type="date" name="date" placeholder="DATE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('date') }}" required>
+                                <input type="number" name="adults" placeholder="NUMBER OF ADULTS" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('adults') }}" required>
+                                <input type="number" name="children" placeholder="NUMBER OF CHILDREN (OPTIONAL)" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300" value="{{ old('children') }}">
+                                <textarea name="message" placeholder="MESSAGE" class="bg-[#00000000] border-0 border-b border-slate-400 py-3 text-white placeholder-gray-300">{{ old('message') }}</textarea>
                                 <div class="w-full flex justify-center py-20">
-                                    <button type="submit" class="w-full bg-[#FF9933] py-3 rounded-full text-md font-bold">SEND NOW</button>
+                                    <button type="submit" class="w-full bg-[#FF9933] py-3 rounded-full text-md font-bold hover:bg-[#e68a2e] transition-colors">SEND NOW</button>
                                 </div>
                             </form>
                         </div>
@@ -227,7 +248,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Smooth Scroll and Map -->
+    <!-- JavaScript for Smooth Scroll, Notifications, and Map -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Smooth scroll for navigation links
@@ -246,6 +267,32 @@
                     }
                 });
             });
+
+            // Auto-hide success notification after 5 seconds
+            const successAlert = document.querySelector('.bg-green-600');
+            if (successAlert) {
+                // Scroll to the notification
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Add click handler to dismiss
+                successAlert.addEventListener('click', function() {
+                    fadeOut(successAlert);
+                });
+
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    fadeOut(successAlert);
+                }, 5000);
+            }
+
+            // Function to fade out elements
+            function fadeOut(element) {
+                element.style.transition = 'opacity 0.5s ease';
+                element.style.opacity = '0';
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 500);
+            }
         });
     </script>
 
