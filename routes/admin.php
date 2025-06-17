@@ -56,6 +56,14 @@ Route::middleware(['AlreadyLoggedIn'])->group(function () {
     Route::post('/admin/update-video/{id}', [VideoController::class, 'update']);
     Route::get('/admin/delete-video/{id}', [VideoController::class, 'delete']);
 
+    // TOUR PACKAGE ROUTES
+    Route::get('/admin/tour-packages', [App\Http\Controllers\Backend\TourPackageController::class, 'index'])->name('admin.tour_packages');
+    Route::get('/admin/tour-package/create', [App\Http\Controllers\Backend\TourPackageController::class, 'create'])->name('admin.tour_package.create');
+    Route::post('/admin/save-tour-package', [App\Http\Controllers\Backend\TourPackageController::class, 'store'])->name('admin.tour_package.store');
+    Route::get('/admin/tour-package/edit/{id}', [App\Http\Controllers\Backend\TourPackageController::class, 'edit'])->name('admin.tour_package.edit');
+    Route::post('/admin/update-tour-package/{id}', [App\Http\Controllers\Backend\TourPackageController::class, 'update'])->name('admin.tour_package.update');
+    Route::get('/admin/tour-package/delete/{id}', [App\Http\Controllers\Backend\TourPackageController::class, 'delete'])->name('admin.tour_package.delete');
+
 
     Route::get('/admin/profile', [ProfileController::class, 'edit']);
     Route::post('/save-profile/update-details/{userId}', [ProfileController::class, 'updateDetails']);

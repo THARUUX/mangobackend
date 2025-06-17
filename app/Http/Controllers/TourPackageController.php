@@ -9,15 +9,9 @@ class TourPackageController extends Controller
 {
     public function index()
     {
-        $tailorMadeTours = TourPackage::where('type', 'tailor-made')
-            ->where('active', true)
-            ->get();
 
-        $roundTours = TourPackage::where('type', 'round-tour')
-            ->where('active', true)
-            ->get();
 
-        return view('frontend.pages.tpd', compact('tailorMadeTours', 'roundTours'));
+        return view('frontend.pages.tpd',);
     }
 
     public function show($slug)

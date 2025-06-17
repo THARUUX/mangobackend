@@ -15,7 +15,7 @@
         <div class="w-full p-10 bg-white">
             <div class="flex flex-col sm:flex-row gap-5 sm:gap-0">
                 <!-- Left Navigation Menu -->
-                <div class="w-full sm:w-1/3 sm:p-20">
+                <div class="w-full sm:w-1/3 sm:p-5">
                     <div class="flex flex-col bg-[#FF9933]">
                         <a href="#about" class="py-10 border-b flex px-15 gap-10 items-center text-xl font-bold hover:bg-[#02515A] duration-300">
                             <div>
@@ -41,15 +41,15 @@
                             </div>
                             <div class="text-lg">LOCATION</div>
                         </a>
-                    </div>                        </div>
-                    </div>
-
-                    <!-- Right Main Image -->
-                    <div class="sm:w-2/3 sm:p-20">
-                        <img class="w-full" src="{{ asset('storage/' . $tourPackage->image) }}" alt="{{ $tourPackage->name }}">
                     </div>
                 </div>
+
+                <!-- Right Main Image -->
+                <div class="sm:w-2/3 sm:p-5">
+                    <img class="w-full" src="{{ asset('storage/' . $tourPackage->image) }}" alt="{{ $tourPackage->name }}">
+                </div>
             </div>
+        </div>
 
 
             <div class="w-full bg-white flex flex-col sm:flex-row text-black sm:p-20 pt-0">
