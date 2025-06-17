@@ -56,29 +56,57 @@
                 <div class="w-full sm:w-2/3 p-10 flex flex-col gap-8">
                     <!-- Tour Title and Price -->
                     <div id="about" class="scroll-mt-24">
-                        <div class="w-full text-5xl sm:text-7xl font-black font-pri">
+                        <div class="w-full text-4xl sm:text-6xl font-black font-pri mb-4">
                             {{ $tourPackage->name }}
                         </div>
-                        <div class="text-xl sm:text-3xl"><span class="font-bold">PRICE ${{ $tourPackage->price }} /</span> {{ $tourPackage->duration }}</div>
 
-                        <span class="w-3/5 h-[1px] bg-black"></span>
+                        <!-- Price Badge -->
+                        <div class="bg-[#02515A] text-white inline-block rounded-lg px-4 py-2 mb-6">
+                            <span class="text-xl sm:text-3xl font-bold">${{ $tourPackage->price }}</span>
+                            <span class="text-lg"> / {{ $tourPackage->duration }}</span>
+                        </div>
 
-                        <!-- Tour Features -->
-                        <div class="flex flex-col sm:flex-row w-full gap-5 sm:gap-10">
-                            <div class="flex text-lg sm:text-2xl gap-5">
-                                <img src="{{ asset('new_frontend/Assets/calendar-clock.png') }}" alt="">
-                                <div class="text-nowrap">{{ $tourPackage->duration }}</div>
-                            </div>
-                            <div class="flex text-lg sm:text-2xl gap-5">
-                                <img src="{{ asset('new_frontend/Assets/footprint.png') }}" alt="">
-                                <div class="text-nowrap">{{ ucfirst(str_replace('-', ' ', $tourPackage->type)) }}</div>
-                            </div>
-                            <div class="flex text-lg sm:text-2xl gap-5">
-                                <img src="{{ asset('new_frontend/Assets/team-check-alt.png') }}" alt="">
-                                <div class="text-nowrap">25 people</div>
+                        <!-- Tour Features Card -->
+                        <div class="bg-gray-50 rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-xl font-bold mb-4 text-[#02515A]">Tour Details</h3>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- Duration Feature -->
+                                <div class="flex items-center gap-4 p-3 bg-white rounded-md shadow-sm border-l-4 border-[#FF9933]">
+                                    <div class="bg-[#FF9933] p-3 rounded-full">
+                                        <img src="{{ asset('new_frontend/Assets/calendar-clock.png') }}" alt="Duration" class="w-6 h-6">
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Duration</p>
+                                        <p class="font-semibold">{{ $tourPackage->duration }}</p>
+                                    </div>
+                                </div>
+
+                                <!-- Tour Type Feature -->
+                                <div class="flex items-center gap-4 p-3 bg-white rounded-md shadow-sm border-l-4 border-[#02515A]">
+                                    <div class="bg-[#02515A] p-3 rounded-full">
+                                        <img src="{{ asset('new_frontend/Assets/footprint.png') }}" alt="Tour Type" class="w-6 h-6">
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Tour Type</p>
+                                        <p class="font-semibold">{{ ucfirst(str_replace('-', ' ', $tourPackage->type)) }}</p>
+                                    </div>
+                                </div>
+
+                                <!-- Group Size Feature -->
+                                <div class="flex items-center gap-4 p-3 bg-white rounded-md shadow-sm border-l-4 border-[#FF9933]">
+                                    <div class="bg-[#FF9933] p-3 rounded-full">
+                                        <img src="{{ asset('new_frontend/Assets/team-check-alt.png') }}" alt="Group Size" class="w-6 h-6">
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Group Size</p>
+                                        <p class="font-semibold">Up to 25 people</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                            <span class="w-3/5 h-[1px] bg-black"></span>
+
+                        <span class="w-3/5 h-[1px] bg-black"></span>
 
                             <!-- Short Description -->
                             <div>
@@ -97,18 +125,43 @@
                         <!-- Included/Excluded Section -->
                         <div id="included-excluded" class="scroll-mt-24">
                             <span class="w-3/5 h-[1px] bg-black"></span>
-                            <div class="text-3xl sm:text-5xl font-black font-pri">Included/Excluded</div>
+                            <div class="text-3xl sm:text-5xl font-black font-pri mb-6">Included/Excluded</div>
 
-                            <div class="sm:w-4/5 flex">
-                                <div class="w-1/2 flex-col flex gap-3 px-3 sm:px-0 text-sm sm:text-md">
-                                    @foreach($tourPackage->included as $item)
-                                        <div>{{ $item }}</div>
-                                    @endforeach
+                            <div class="flex flex-col sm:flex-row gap-6 sm:w-4/5">
+                                <!-- Included Items -->
+                                <div class="w-full sm:w-1/2 bg-green-50 rounded-lg shadow-md p-5">
+                                    <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        Included
+                                    </h3>
+                                    <ul class="flex flex-col gap-3 text-sm sm:text-md">
+                                        @foreach($tourPackage->included as $item)
+                                            <li class="flex items-start">
+                                                <span class="text-green-600 mr-2 mt-1">✓</span>
+                                                <span>{{ $item }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
-                                <div class="w-1/2 flex-col flex gap-3 px-3 sm:px-0 text-sm sm:text-md">
-                                    @foreach($tourPackage->excluded as $item)
-                                        <div>{{ $item }}</div>
-                                    @endforeach
+
+                                <!-- Excluded Items -->
+                                <div class="w-full sm:w-1/2 bg-red-50 rounded-lg shadow-md p-5">
+                                    <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                        Excluded
+                                    </h3>
+                                    <ul class="flex flex-col gap-3 text-sm sm:text-md">
+                                        @foreach($tourPackage->excluded as $item)
+                                            <li class="flex items-start">
+                                                <span class="text-red-600 mr-2 mt-1">✕</span>
+                                                <span>{{ $item }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -147,10 +200,8 @@
                         <!-- Location Section -->
                         <div id="location" class="mb-10 scroll-mt-24">
                             <span class="w-3/5 h-[1px] bg-black"></span>
-                            <div class=""><span class="text-3xl sm:text-5xl font-black font-pri">Tour's Location </span><span class="text-xs sm:text-md">{{ $tourPackage->locations }}</span></div>
-                            <div>
-                                <img class="w-full" src="{{ asset('new_frontend/Assets/Screenshot 2025-04-27 134546.png') }}" alt="Map">
-                            </div>
+                            <div class="mb-4"><span class="text-3xl sm:text-5xl font-black font-pri">Tour's Location </span><span class="text-xs sm:text-md">{{ $tourPackage->locations }}</span></div>
+                            <div id="google-map" class="w-full h-96 rounded-lg shadow-md"></div>
                         </div>
                     </div>                    <div class="w-full sm:w-1/3">
                         <div class="bg-[#02515A] w-full flex flex-col p-10 sm:p-20 text-white">
@@ -176,7 +227,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Smooth Scroll -->
+    <!-- JavaScript for Smooth Scroll and Map -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Smooth scroll for navigation links
@@ -197,4 +248,62 @@
             });
         });
     </script>
+
+    <!-- Google Maps Script -->
+    @php
+        $apiKey = config('services.google.maps_api_key');
+    @endphp
+
+    @if($apiKey)
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ $apiKey }}&callback=initMap&libraries=places&v=weekly" defer></script>
+        <script>
+            // Initialize the Google Map
+            function initMap() {
+                // Get location from tourPackage
+                const locationName = "{{ $tourPackage->locations }}, Sri Lanka";
+                const mapDiv = document.getElementById("google-map");
+
+                // Create a new map instance
+                const map = new google.maps.Map(mapDiv, {
+                    zoom: 10,
+                    center: { lat: 7.8731, lng: 80.7718 }, // Default to Sri Lanka center
+                });
+
+                // Create a geocoder to convert the location name to coordinates
+                const geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ address: locationName }, (results, status) => {
+                    if (status === "OK") {
+                        // Center map on the found location
+                        map.setCenter(results[0].geometry.location);
+
+                        // Add a marker for the location
+                        new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location,
+                            title: "{{ $tourPackage->name }}"
+                        });
+                    } else {
+                        console.error(`Geocode failed: ${status}`);
+                    }
+                });
+            }
+        </script>
+    @else
+        <!-- Fallback when no API key is available -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const mapDiv = document.getElementById("google-map");
+                mapDiv.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full bg-gray-100 rounded-lg p-6 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h3 class="text-lg font-semibold mb-2">Location: {{ $tourPackage->locations }}</h3>
+                        <p class="text-gray-600">Google Maps preview is currently unavailable.</p>
+                    </div>
+                `;
+            });
+        </script>
+    @endif
 @endsection
