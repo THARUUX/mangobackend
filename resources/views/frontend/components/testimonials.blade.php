@@ -65,6 +65,30 @@
                                 <div class="text-orange-400 mt-2 text-lg text-center">★★★★★</div>
                             </div>
                         </div>
+                        <div class="swiper-slide flex flex-col items-center justify-center">
+                            <div class="testimonial-card flex flex-col items-center">
+                                <img src="{{ $testimonial['image'] }}" class="rounded-full border-4 border-orange-400 w-24 h-24 md:w-32 md:h-32 object-cover" alt="{{ $testimonial['name'] }}" />
+                                <h4 class="text-xl font-bold mt-4 text-center">{{ $testimonial['name'] }}</h4>
+                                <p class="text-gray-500 text-center">{{ $testimonial['title'] }}</p>
+                                <div class="text-orange-400 mt-2 text-lg text-center">★★★★★</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex flex-col items-center justify-center">
+                            <div class="testimonial-card flex flex-col items-center">
+                                <img src="{{ $testimonial['image'] }}" class="rounded-full border-4 border-orange-400 w-24 h-24 md:w-32 md:h-32 object-cover" alt="{{ $testimonial['name'] }}" />
+                                <h4 class="text-xl font-bold mt-4 text-center">{{ $testimonial['name'] }}</h4>
+                                <p class="text-gray-500 text-center">{{ $testimonial['title'] }}</p>
+                                <div class="text-orange-400 mt-2 text-lg text-center">★★★★★</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex flex-col items-center justify-center">
+                            <div class="testimonial-card flex flex-col items-center">
+                                <img src="{{ $testimonial['image'] }}" class="rounded-full border-4 border-orange-400 w-24 h-24 md:w-32 md:h-32 object-cover" alt="{{ $testimonial['name'] }}" />
+                                <h4 class="text-xl font-bold mt-4 text-center">{{ $testimonial['name'] }}</h4>
+                                <p class="text-gray-500 text-center">{{ $testimonial['title'] }}</p>
+                                <div class="text-orange-400 mt-2 text-lg text-center">★★★★★</div>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>
