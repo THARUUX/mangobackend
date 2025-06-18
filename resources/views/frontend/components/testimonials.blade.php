@@ -138,84 +138,27 @@
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const swiper = new Swiper(".mySwiper", {
-                loop: true,
-                centeredSlides: true,
-                spaceBetween: 40,
-                effect: "coverflow",
-                grabCursor: true,
-                coverflowEffect: {
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: false,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1.1,
-                    },
-                    640: {
-                        slidesPerView: 1.3,
-                    },
-                    768: {
-                        slidesPerView: 1.8,
-                    },
-                    1024: {
-                        slidesPerView: 2.5,
-                    }
-                },
-                on: {
-                    init: function () {
-                        updateTestimonialContent(this.realIndex);
-                    },
-                    slideChange: function () {
-                        updateTestimonialContent(this.realIndex);
-                    }
-                }
-            });
-
-            function updateTestimonialContent(index) {
-                const testimonialContents = document.querySelectorAll('.testimonial-content');
-                testimonialContents.forEach((content, i) => {
-                    if (i === index) {
-                        content.classList.add('active');
-                        content.classList.remove('hidden');
-                    } else {
-                        content.classList.remove('active');
-                        content.classList.add('hidden');
-                    }
-                });
-            }
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+            delay: 3000, // 3 seconds delay between slides
+            disableOnInteraction: false, // autoplay won't stop after user interaction
+            },
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+            },
         });
-    </script>
-    <script>
-    const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        autoplay: {
-        delay: 3000, // 3 seconds delay between slides
-        disableOnInteraction: false, // autoplay won't stop after user interaction
-        },
-        navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        },
-        slidesPerView: 1,
-        spaceBetween: 30,
-        breakpoints: {
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-        },
-    });
     </script>
 
     @endpush
