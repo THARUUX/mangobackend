@@ -18,14 +18,12 @@
     <div class="hidden sm:flex order-3">
         <a href="{{ route('gallery') }}" class="sm:px-10">GALLERY</a>
         <a href="{{ route('blog') }}" class="sm:px-10">BLOG</a>
-      <a href="{{ route('tours') }}" class="sm:px-10">TPD</a>
         <a href="{{ route('contact') }}" class="sm:px-10">CONTACT</a>
     </div>
 </div>
 <div class="relative w-full z-1 hidden" id="navbar-default">
     <div class="absolute top-0 flex flex-col p-5 right-0 gap-10 bg-white text-black w-full">
         <a href="{{ route('home') }}" class="sm:px-10">HOME</a>
-        <a href="{{ route('tours') }}" class="sm:px-10">TPD</a>
         <a href="{{ route('about') }}" class="sm:px-10">ABOUT</a>
         <a href="{{ route('service') }}" class="sm:px-10">TOUR PACKAGES</a>
         <a href="{{ route('gallery') }}" class="sm:px-10">GALLERY</a>
