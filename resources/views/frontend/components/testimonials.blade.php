@@ -194,5 +194,29 @@
             }
         });
     </script>
+    <script>
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+        delay: 3000, // 3 seconds delay between slides
+        disableOnInteraction: false, // autoplay won't stop after user interaction
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+        },
+    });
+    </script>
+
     @endpush
 @endonce
