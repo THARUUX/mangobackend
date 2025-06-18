@@ -108,7 +108,7 @@
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="w-full flex items-end h-[871px]" style="background-image: url('{{ asset('new_frontend/Assets/img(6).png') }}'); background-size: cover; background-position: center;">
-                    <div class="bg-[#FF9933] py-9 px-12 text-xl sm:text-2xl tracking-wider">MORE DETAILS</div>
+                    <div class="bg-[#FF9933] hover:bg-[#FFBB55] cursor-pointer duration-300 py-9 px-12 text-xl sm:text-2xl tracking-wider">MORE DETAILS</div>
                 </div>
             </div>
         </section>
@@ -130,7 +130,7 @@
                         Happy Mango Tours, we specialize in crafting unforgettable travel experiences tailored just for you. Whether you're looking for a relaxing beach escape, an action-packed adventure, or a deep dive into rich cultural heritage, we have the perfect tour to match your desires. <br><br> With expertly curated packages, experienced local guides, and personalized services, we ensure every journey is seamless, exciting, and filled with incredible memories. Let us take you on an extraordinary adventure—wherever your heart desires!
                     </div>
                     <div class="">
-                        <button class="border py-2 px-5 cursor-pointer font-pri text-white">LEARN MORE ABOUT</button>
+                        <button class="border hover:scale-105 duration-300 py-2 px-5 cursor-pointer font-pri text-white">LEARN MORE ABOUT</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                 <div class="sm:w-3/7 flex justify-center text-center font-pri ">Customize your dream vacation! Our tailor-made tours let you design your perfect itinerary, choosing destinations, activities, and experiences that match your interests and travel style.</div>
             </div>
 
-            <div class="swiper-container tailor-made-tours-swiper">
+            <div class="swiper-container overflow-hidden tailor-made-tours-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="w-full h-[500px] sm:h-[650px] bg-slate-300 flex flex-col justify-end relative group bg-cover bg-center" style="background-image: url('{{ asset('new_frontend/Assets/img(7).png') }}');">
@@ -232,7 +232,7 @@
                 <div class="sm:w-3/7 flex justify-center text-center font-pri text-sm sm:text-md">Discover Sri Lanka's most breathtaking destinations with our expertly curated round tours cover the island's top attractions, offering a perfect blend of adventure, culture, and relaxation.</div>
             </div>
 
-            <div class="swiper-container round-tours-swiper">
+            <div class="swiper-container overflow-hidden round-tours-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="w-full h-[500px] sm:h-[650px] bg-slate-300 flex flex-col justify-end relative group bg-cover bg-center" style="background-image: url('{{ asset('new_frontend/Assets/img(7).png') }}');">
@@ -307,7 +307,7 @@
 
             <div class="justify-center flex py-15 mt-10">
                 <a href="{{ url('/service') }}">
-                    <button class="py-3 px-6 rounded-full text-white font-[600] bg-[#ff9933]">EXPLORE MORE TOURS</button>
+                    <button class="py-3 px-6 hover:scale-105 duration-300 rounded-full text-white font-[600] bg-[#ff9933]">EXPLORE MORE TOURS</button>
                 </a>
             </div>
         </section>
@@ -390,10 +390,10 @@
                         <div>info@happymangotours.com</div>
                     </div>
                     <div class="flex gap-10 items-center">
-                        <img src="{{ asset('new_frontend/Assets/Icon Container(1).png') }}" class="w-[50px] h-[50px]" alt="">
-                        <img src="{{ asset('new_frontend/Assets/Icon Container(2).png') }}" class="w-[50px] h-[50px]" alt="">
-                        <img src="{{ asset('new_frontend/Assets/Icon Container(3).png') }}" class="w-[50px] h-[50px]" alt="">
-                        <img src="{{ asset('new_frontend/Assets/Icon Container(4).png') }}" class="w-[50px] h-[50px]" alt="">
+                        <img class="hover:scale-105 duration-300" src="{{ asset('new_frontend/Assets/Icon Container(1).png') }}" class="w-[50px] h-[50px]" alt="">
+                        <img class="hover:scale-105 duration-300" src="{{ asset('new_frontend/Assets/Icon Container(2).png') }}" class="w-[50px] h-[50px]" alt="">
+                        <img class="hover:scale-105 duration-300" src="{{ asset('new_frontend/Assets/Icon Container(3).png') }}" class="w-[50px] h-[50px]" alt="">
+                        <img class="hover:scale-105 duration-300" src="{{ asset('new_frontend/Assets/Icon Container(4).png') }}" class="w-[50px] h-[50px]" alt="">
                     </div>
                 </div>
             </div>
