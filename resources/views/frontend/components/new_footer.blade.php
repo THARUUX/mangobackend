@@ -50,9 +50,6 @@
                     <button class="bg-[#ff9933] py-2 rounded-full px-8 cursor-pointer hover:bg-[#ffab57] text-white text-sm">SUBMIT</button>
                 </div>
             </form>
-            <div>
-                <button class="bg-[#ff9933] py-2 rounded-full px-8 cursor-pointer hover:bg-[#ffab57] text-white text-sm">SUBMIT</button>
-            </div>
         </div>
     </div>
     <div class="w-full pb-10 sm:text-md text-xs text-center text-white">© {{ date('Y') }} Happy Mango Tours | Web Design & Solutions By DIGITALNEXT</div>
