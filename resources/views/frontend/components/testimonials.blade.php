@@ -138,7 +138,8 @@
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.mySwiper', {
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.mySwiper', {
             loop: true,
             autoplay: {
             delay: 3000, // 3 seconds delay between slides
@@ -159,7 +160,24 @@
             },
             },
         });
+
+            function updateTestimonialContent(index) {
+                const testimonialContents = document.querySelectorAll('.testimonial-content');
+                testimonialContents.forEach((content, i) => {
+                    if (i === index) {
+                        content.classList.add('active');
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.remove('active');
+                        content.classList.add('hidden');
+                    }
+                });
+            }
+        });
     </script>
+    <script>
+        
+        </script>
 
     @endpush
 @endonce
