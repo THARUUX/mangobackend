@@ -32,43 +32,43 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="fname" value="{{ old('fname') }}"
+                            <input type="text" class="form-control w-full" name="fname" value="{{ old('fname') }}"
                                 placeholder="First Name">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4 mt-lg-0">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="lname" value="{{ old('lname') }}"
+                            <input type="text" class="form-control w-full" name="lname" value="{{ old('lname') }}"
                                 placeholder="Last Name">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" value="{{ old('email') }}"
+                            <input type="text" class="form-control w-full" name="email" value="{{ old('email') }}"
                                 placeholder="Email">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4">
                         <div class="form-group">
-                            <input type="number" class="form-control" name="phone" value="{{ old('phone') }}"
+                            <input type="number" class="form-control w-full" name="phone" value="{{ old('phone') }}"
                                 placeholder="Phone">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="company" value="{{ old('company') }}"
+                            <input type="text" class="form-control w-full" name="company" value="{{ old('company') }}"
                                 placeholder="Company">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="address" value="{{ old('address') }}"
+                            <input type="text" class="form-control w-full" name="address" value="{{ old('address') }}"
                                 placeholder="Address">
                         </div>
                     </div>
                     <div class="col-12 mt-4">
                         <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Message" rows="6">{{ old('message') }}</textarea>
+                            <textarea class="form-control w-full" name="message" placeholder="Message" rows="6">{{ old('message') }}</textarea>
                         </div>
                     </div>
 
