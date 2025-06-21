@@ -149,6 +149,7 @@
                     <div class="swiper-slide">
                         <div class="w-full h-[500px] sm:h-[650px] bg-slate-300 flex flex-col justify-end relative group bg-cover bg-center" style="background-image: url('{{ asset('new_frontend/Assets/img(7).png') }}');">
                             <div class="absolute bg-[#ff9933] top-0 right-4 sm:right-7 rounded-b-xl text-white text-xs font-bold px-3 py-2 z-10">TAILOR MADE TOURS</div>
+                            <div class="crsl-cont flex flex-col justify-end absolute w-full h-[306px]" bis_skin_checked="1"></div>
                             <div class="bg-black/50 z-[9] opacity-0 group-hover:opacity-100 duration-300 w-full grow flex justify-center items-center text-white">
                                 <div class="border-2 rounded-full p-4 sm:p-5 duration-300 group-hover:rotate-[-30deg]">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-white" fill="white" width="24" height="24" viewBox="0 0 12.86 8.045">
@@ -170,6 +171,7 @@
                     <div class="swiper-slide">
                         <div class="w-full h-[500px] sm:h-[650px] bg-slate-300 flex flex-col justify-end relative group bg-cover bg-center" style="background-image: url('{{ asset('new_frontend/Assets/img(7).png') }}');">
                             <div class="absolute bg-[#ff9933] top-0 right-4 sm:right-7 rounded-b-xl text-white text-xs font-bold px-3 py-2 z-10">TAILOR MADE TOURS</div>
+                            <div class="crsl-cont flex flex-col justify-end absolute w-full h-[306px]" bis_skin_checked="1"></div>
                             <div class="bg-black/50 z-[9] opacity-0 group-hover:opacity-100 duration-300 w-full grow flex justify-center items-center text-white">
                                 <div class="border-2 rounded-full p-4 sm:p-5 duration-300 group-hover:rotate-[-30deg]">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-white" fill="white" width="24" height="24" viewBox="0 0 12.86 8.045">
@@ -191,6 +193,7 @@
                     <div class="swiper-slide">
                         <div class="w-full h-[500px] sm:h-[650px] bg-slate-300 flex flex-col justify-end relative group bg-cover bg-center" style="background-image: url('{{ asset('new_frontend/Assets/img(7).png') }}');">
                             <div class="absolute bg-[#ff9933] top-0 right-4 sm:right-7 rounded-b-xl text-white text-xs font-bold px-3 py-2 z-10">TAILOR MADE TOURS</div>
+                            <div class="crsl-cont flex flex-col justify-end absolute w-full h-[306px]" bis_skin_checked="1"></div>
                             <div class="bg-black/50 z-[9] opacity-0 group-hover:opacity-100 duration-300 w-full grow flex justify-center items-center text-white">
                                 <div class="border-2 rounded-full p-4 sm:p-5 duration-300 group-hover:rotate-[-30deg]">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-white" fill="white" width="24" height="24" viewBox="0 0 12.86 8.045">
