@@ -15,14 +15,14 @@
                 <div class="w-full sm:w-1/2 flex flex-col gap-10">
                     <form action="{{ url('/contactFormSubmit') }}" method="POST">
                         @csrf
-                        <input class="bg-[#F3F3F3] p-5 border-0 text-[#535446]" type="text" name="name" placeholder="Your Name" required>
-                        <input class="bg-[#F3F3F3] p-5 border-0 text-[#535446] mt-10" type="text" name="phone" placeholder="Your Phone Number" required>
-                        <input class="bg-[#F3F3F3] p-5 border-0 text-[#535446] mt-10" type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" class="bg-[#F3F3F3] p-5 border-0 text-[#535446] mt-10" placeholder="Message Here" id="" rows="5" required></textarea>
+                        <input class="bg-[#F3F3F3] w-full p-5 border-0 text-[#535446]" type="text" name="name" placeholder="Your Name" required>
+                        <input class="bg-[#F3F3F3] w-full p-5 border-0 text-[#535446] mt-10" type="text" name="phone" placeholder="Your Phone Number" required>
+                        <input class="bg-[#F3F3F3] w-full p-5 border-0 text-[#535446] mt-10" type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" class="bg-[#F3F3F3] w-full p-5 border-0 text-[#535446] mt-10" placeholder="Message Here" id="" rows="5" required></textarea>
                         <button type="submit" class="bg-[#FF9933] text-white py-3 px-8 mt-10 hover:bg-[#e88929] transition">Send Message</button>
                     </form>
                 </div>
-                <div class="w-full sm:w-1/2 flex flex-col gap-5 sm:gap-20 p-5 sm:p-10 text-black">
+                <div class="w-full sm:w-1/2 flex flex-col gap-5 sm:gap-20 px-5 sm:px-10 text-black">
                     <div class="w-full flex justify-center"><img src="{{ asset('new_frontend/Assets/logo.png') }}" alt=""></div>
                     <div>
                         <div class="text-2xl pb-5 text-center">Location</div>
