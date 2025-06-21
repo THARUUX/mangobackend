@@ -11,7 +11,7 @@
     </div>
     <div class="max-w-[2500px] w-full bg-slate-300 grow text-white">
         <div class="py-20 w-full px-5 sm:px-10 flex flex-col bg-white text-black items-center justify-center gap-5">
-            <div class="w-full text-4xl sm:text-6xl font-pri font-black text-center">Daily Updates & News</div>
+            <div class="w-full text-4xl sm:text-6xl font-pri font-black text-center">Tradiational doors & travel</div>
             <div class="sm:w-3/7 flex justify-center text-center font-pri">Our Blog </div>
             <div class="w-full sm:px-20 flex flex-wrap">
                 @foreach($posts as $post)
