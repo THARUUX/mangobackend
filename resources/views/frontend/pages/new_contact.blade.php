@@ -10,7 +10,8 @@
         <div class="text-2xl font-black font-pri">HOME - CONTACT</div>
     </div>
     <div class="max-w-[2500px] w-full bg-white grow text-white">
-        <div class="w-full sm:p-20 bg-white flex justify-center">
+        <div class="w-full sm:p-20 bg-white flex flex-col justify-center">
+            <div class="w-full text-xl sm:text-3xl px-5 sm:px-0 py-15  text-black font-black">Have a question or comment? <br> Use the form below to send us a message. </div>
             <div class="bg-[#F9F9F9] w-[1000px] py-15 px-10 flex flex-col sm:flex-row pb-28">
                 <div class="w-full sm:w-1/2 flex flex-col gap-10">
                     <form action="{{ url('/contactFormSubmit') }}" method="POST">
