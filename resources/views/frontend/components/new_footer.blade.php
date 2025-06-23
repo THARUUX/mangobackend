@@ -44,8 +44,8 @@
         <div class="grow px-5 sm:px-20 text-white flex flex-col gap-3 border-white/75 sm:border-l">
             <div>GET UPDATES ON NEW TOURS <br> & BLOG NEWS </div>
             <form class="border-0 flex flex-col gap-3">
-                <input class="border-0 focus:outline-none focus:border-b focus:border-b-white/20" type="text" placeholder="Your Name">
-                <input class="border-0 focus:outline-none focus:border-b focus:border-b-white/20" type="text" placeholder="Your Email">
+                <input class="border-0 border-b-1 px-2 py-3 border-b-white/20 focus:outline-none focus:border-b focus:border-b-white/40" type="text" placeholder="Your Name">
+                <input class="border-0 border-b-1 px-2 py-3 border-b-white/20 focus:outline-none focus:border-b focus:border-b-white/40" type="text" placeholder="Your Email">
                 <div>
                     <button class="bg-[#ff9933] py-2 rounded-full px-8 cursor-pointer hover:bg-[#ffab57] text-white text-sm">SUBMIT</button>
                 </div>
