@@ -10,6 +10,7 @@
         <div class="text-2xl font-black font-pri">HOME - CONTACT</div>
     </div>
     <div class="max-w-[2500px] w-full bg-white grow text-white">
+        
         <div class="w-full sm:p-20 bg-white flex flex-col items-center justify-center">
             <div class="w-full max-w-[1000px] text-xl sm:text-3xl px-5 sm:px-0 py-15  text-black font-black">Have a question or comment? <br> Use the form below to send us a message. </div>
             <div class="bg-[#F9F9F9] gap-20 sm:gap-0 w-full max-w-[1000px] py-15 px-10 flex flex-col sm:flex-row pb-28">
@@ -23,17 +24,11 @@
                         <button type="submit" class="bg-[#FF9933] text-white py-3 px-8 mt-10 hover:bg-[#e88929] transition">Send Message</button>
                     </form>
                 </div>
-                <div class="w-full sm:w-1/2 flex flex-col gap-5 sm:gap-20 px-5 sm:px-10 text-black">
-                    <div class="w-full flex justify-center"><img src="{{ asset('new_frontend/Assets/logo.png') }}" alt=""></div>
-                    <div>
-                        <div class="text-2xl pb-5 text-center">Location</div>
-                        <div class="pb-5 text-center">No 38/4 Moragolla, Imbulgasdeniya, Kegalle, Sri Lanka</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl pb-5 text-center">Contact Info</div>
-                        <div class="pb-2 text-center">+94 77 700 7707</div>
-                        <div class="text-center">info@happymangotours.com</div>
-                    </div>
+                <div class="w-full sm:w-1/2 flex flex-col gap-5 sm:gap-20 p-5 sm:p-10 text-black">
+                    <div class="flex gap-5 items-center"><img class="w-5 h-fit" src="Assets/Group 123953.png" alt=""><div>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div></div>
+                    <div class="flex gap-5 items-center"><img class="w-5 h-fit" src="Assets/Group 123954.png" alt=""><div>8500, Negombo Road, Colombo, Sri Lanka</div></div>
+                    <div class="flex gap-5 items-center"><img class="w-5 h-fit" src="Assets/phone.png" alt=""><div>0900 am - 07:00pm</div></div>
+                    <div class="flex gap-5 items-center"><img class="w-5 h-fit" src="Assets/Group 123956.png" alt=""><div>MONDAY - THURSDAY  :  11AM - 5PM <br> FRIDAY - SUNDAY  :  10AM - 5PM <br> LAST POUR  :  4:30PM </div></div>
                 </div>
             </div>
         </div>
